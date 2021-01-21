@@ -1,0 +1,537 @@
+2021-01-07 22:49:58 +0000 :: hfe02 :: Forcibly submitting gdasprepchem
+2021-01-07 22:49:58 +0000 :: hfe02 :: Submission status of gdasprepchem is pending at druby://hfe02:38772
+2021-01-07 22:52:33 +0000 :: hfe02 :: Submission status of previously pending gdasprepchem is success, jobid=15160973
+2021-01-07 22:52:34 +0000 :: hfe02 :: Task gdasprepchem, jobid=15160973, in state FAILED (FAILED), ran for 5.0 seconds, exit status=768, try=1 (of 2)
+2021-01-07 22:52:57 +0000 :: hfe02 :: This cycle is complete: Success
+2021-01-07 22:56:00 +0000 :: hfe02 :: Forcibly submitting gdasprepchem
+2021-01-07 22:56:00 +0000 :: hfe02 :: Submission status of gdasprepchem is pending at druby://hfe02:38589
+2021-01-07 22:59:38 +0000 :: hfe02 :: Submission status of previously pending gdasprepchem is success, jobid=15161115
+2021-01-07 22:59:38 +0000 :: hfe02 :: Task gdasprepchem, jobid=15161115, in state SUCCEEDED (COMPLETED), ran for 7.0 seconds, exit status=0, try=3 (of 2)
+2021-01-07 22:59:46 +0000 :: hfe02 :: Forcibly submitting gdascalcinc
+2021-01-07 22:59:46 +0000 :: hfe02 :: Submission status of gdascalcinc is pending at druby://hfe02:34629
+2021-01-07 23:04:29 +0000 :: hfe02 :: Submission status of previously pending gdascalcinc is success, jobid=15161159
+2021-01-07 23:04:29 +0000 :: hfe02 :: Task gdascalcinc, jobid=15161159, in state SUCCEEDED (COMPLETED), ran for 5.0 seconds, exit status=0, try=1 (of 2)
+2021-01-07 23:04:36 +0000 :: hfe02 :: Forcibly submitting gdascalcinc
+2021-01-07 23:04:36 +0000 :: hfe02 :: Submission status of gdascalcinc is pending at druby://hfe02:34089
+2021-01-07 23:09:23 +0000 :: hfe01 :: Submission status of previously pending gdascalcinc is success, jobid=15161729
+2021-01-07 23:09:23 +0000 :: hfe01 :: Task gdascalcinc, jobid=15161729, in state SUCCEEDED (COMPLETED), ran for 15.0 seconds, exit status=0, try=3 (of 2)
+2021-01-07 23:09:23 +0000 :: hfe01 :: Forcibly submitting gdasfcst
+2021-01-07 23:09:23 +0000 :: hfe01 :: Submission status of gdasfcst is pending at druby://hfe01:37060
+2021-01-08 00:08:07 +0000 :: hfe03 :: Submission status of previously pending gdasfcst is success, jobid=15162466
+2021-01-08 00:08:07 +0000 :: hfe03 :: Task gdasfcst, jobid=15162466, in state UNAVAILABLE (Unavailable)
+2021-01-08 00:08:15 +0000 :: hfe03 :: Task gdasfcst, jobid=15162466, in state UNAVAILABLE (Unavailable)
+2021-01-08 00:08:18 +0000 :: hfe03 :: Forcibly submitting gdasfcst
+2021-01-08 00:08:18 +0000 :: hfe03 :: Submission status of gdasfcst is pending at druby://hfe03:36742
+2021-01-08 23:45:23 +0000 :: hfe03 :: Submission status of previously pending gdasfcst is success, jobid=15164796
+2021-01-08 23:45:23 +0000 :: hfe03 :: Task gdasfcst, jobid=15164796, in state UNAVAILABLE (Unavailable)
+2021-01-08 23:45:23 +0000 :: hfe03 :: Forcibly submitting gdasefcs01
+2021-01-08 23:45:23 +0000 :: hfe03 :: Submission status of gdasefcs01 is pending at druby://hfe03:45960
+2021-01-08 23:45:23 +0000 :: hfe03 :: Forcibly submitting gdasefcs02
+2021-01-08 23:45:23 +0000 :: hfe03 :: Submission status of gdasefcs02 is pending at druby://hfe03:45960
+2021-01-08 23:45:23 +0000 :: hfe03 :: Forcibly submitting gdasefcs03
+2021-01-08 23:45:23 +0000 :: hfe03 :: Submission status of gdasefcs03 is pending at druby://hfe03:45960
+2021-01-08 23:45:23 +0000 :: hfe03 :: Forcibly submitting gdasefcs04
+2021-01-08 23:45:23 +0000 :: hfe03 :: Submission status of gdasefcs04 is pending at druby://hfe03:45960
+2021-01-08 23:45:23 +0000 :: hfe03 :: Forcibly submitting gdasefcs05
+2021-01-08 23:45:23 +0000 :: hfe03 :: Submission status of gdasefcs05 is pending at druby://hfe03:45960
+2021-01-08 23:45:42 +0000 :: hfe03 :: Submission status of previously pending gdasefcs01 is success, jobid=15193787
+2021-01-08 23:45:42 +0000 :: hfe03 :: Submission status of previously pending gdasefcs02 is success, jobid=15193788
+2021-01-08 23:45:42 +0000 :: hfe03 :: Submission status of previously pending gdasefcs03 is failure!  sbatch: error: QOSMaxSubmitJobPerUserLimit
+sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+2021-01-08 23:45:42 +0000 :: hfe03 :: Submission status of previously pending gdasefcs04 is failure!  sbatch: error: QOSMaxSubmitJobPerUserLimit
+sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+2021-01-08 23:45:42 +0000 :: hfe03 :: Submission status of previously pending gdasefcs05 is failure!  sbatch: error: QOSMaxSubmitJobPerUserLimit
+sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+2021-01-08 23:45:42 +0000 :: hfe03 :: Task gdasfcst, jobid=15164796, in state SUCCEEDED (COMPLETED), ran for 87.0 seconds, exit status=0, try=1 (of 2)
+2021-01-08 23:45:42 +0000 :: hfe03 :: Task gdasefcs01, jobid=15193787, in state FAILED (FAILED), ran for 7.0 seconds, exit status=512, try=1 (of 2)
+2021-01-08 23:45:42 +0000 :: hfe03 :: Task gdasefcs02, jobid=15193788, in state FAILED (FAILED), ran for 5.0 seconds, exit status=512, try=1 (of 2)
+2021-01-08 23:45:42 +0000 :: hfe03 :: Forcibly submitting gdasefcs01
+2021-01-08 23:45:42 +0000 :: hfe03 :: Submission status of gdasefcs01 is pending at druby://hfe03:42374
+2021-01-08 23:45:42 +0000 :: hfe03 :: Forcibly submitting gdasefcs02
+2021-01-08 23:45:42 +0000 :: hfe03 :: Submission status of gdasefcs02 is pending at druby://hfe03:42374
+2021-01-08 23:45:42 +0000 :: hfe03 :: Forcibly submitting gdasefcs03
+2021-01-08 23:45:42 +0000 :: hfe03 :: Submission status of gdasefcs03 is pending at druby://hfe03:42374
+2021-01-08 23:45:42 +0000 :: hfe03 :: Forcibly submitting gdasefcs04
+2021-01-08 23:45:42 +0000 :: hfe03 :: Submission status of gdasefcs04 is pending at druby://hfe03:42374
+2021-01-08 23:45:42 +0000 :: hfe03 :: Forcibly submitting gdasefcs05
+2021-01-08 23:45:42 +0000 :: hfe03 :: Submission status of gdasefcs05 is pending at druby://hfe03:42374
+2021-01-08 23:56:26 +0000 :: hfe11 :: Submission status of previously pending gdasefcs01 is success, jobid=15193796
+2021-01-08 23:56:26 +0000 :: hfe11 :: Submission status of previously pending gdasefcs02 is success, jobid=15193797
+2021-01-08 23:56:26 +0000 :: hfe11 :: Submission status of previously pending gdasefcs03 is success, jobid=15193798
+2021-01-08 23:56:26 +0000 :: hfe11 :: Submission status of previously pending gdasefcs04 is success, jobid=15193799
+2021-01-08 23:56:26 +0000 :: hfe11 :: Submission status of previously pending gdasefcs05 is success, jobid=15193800
+2021-01-08 23:56:27 +0000 :: hfe11 :: Task gdasefcs01, jobid=15193796, in state DEAD (FAILED), ran for 8.0 seconds, exit status=2, try=3 (of 2)
+2021-01-08 23:56:27 +0000 :: hfe11 :: Task gdasefcs02, jobid=15193797, in state DEAD (FAILED), ran for 7.0 seconds, exit status=2, try=3 (of 2)
+2021-01-08 23:56:27 +0000 :: hfe11 :: Task gdasefcs03, jobid=15193798, in state FAILED (FAILED), ran for 7.0 seconds, exit status=2, try=1 (of 2)
+2021-01-08 23:56:27 +0000 :: hfe11 :: Task gdasefcs04, jobid=15193799, in state FAILED (FAILED), ran for 5.0 seconds, exit status=2, try=1 (of 2)
+2021-01-08 23:56:27 +0000 :: hfe11 :: Task gdasefcs05, jobid=15193800, in state FAILED (FAILED), ran for 6.0 seconds, exit status=2, try=1 (of 2)
+2021-01-12 23:44:33 +0000 :: hfe01 :: Forcibly submitting gdasprepchem
+2021-01-12 23:44:33 +0000 :: hfe01 :: Submission status of gdasprepchem is pending at druby://hfe01:34652
+2021-01-12 23:45:41 +0000 :: hfe01 :: Submission status of previously pending gdasprepchem is success, jobid=15301230
+2021-01-12 23:45:41 +0000 :: hfe01 :: Task gdasprepchem, jobid=15301230, in state SUCCEEDED (COMPLETED), ran for 5.0 seconds, exit status=0, try=5 (of 2)
+2021-01-12 23:45:41 +0000 :: hfe01 :: Forcibly submitting gdascalcinc
+2021-01-12 23:45:41 +0000 :: hfe01 :: Submission status of gdascalcinc is pending at druby://hfe01:33223
+2021-01-12 23:45:52 +0000 :: hfe01 :: Submission status of previously pending gdascalcinc is success, jobid=15301277
+2021-01-12 23:45:52 +0000 :: hfe01 :: Task gdascalcinc, jobid=15301277, in state SUCCEEDED (COMPLETED), ran for 8.0 seconds, exit status=0, try=5 (of 2)
+2021-01-12 23:45:53 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc01
+2021-01-12 23:45:53 +0000 :: hfe01 :: Submission status of gdasenscalcinc01 is pending at druby://hfe01:35389
+2021-01-12 23:45:53 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc02
+2021-01-12 23:45:53 +0000 :: hfe01 :: Submission status of gdasenscalcinc02 is pending at druby://hfe01:35389
+2021-01-12 23:45:53 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc03
+2021-01-12 23:45:53 +0000 :: hfe01 :: Submission status of gdasenscalcinc03 is pending at druby://hfe01:35389
+2021-01-12 23:45:53 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc04
+2021-01-12 23:45:53 +0000 :: hfe01 :: Submission status of gdasenscalcinc04 is pending at druby://hfe01:35389
+2021-01-12 23:45:53 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc05
+2021-01-12 23:45:53 +0000 :: hfe01 :: Submission status of gdasenscalcinc05 is pending at druby://hfe01:35389
+2021-01-12 23:46:07 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc01 is success, jobid=15301285
+2021-01-12 23:46:07 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc02 is success, jobid=15301286
+2021-01-12 23:46:07 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc03 is failure!  sbatch: error: QOSMaxSubmitJobPerUserLimit
+sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+2021-01-12 23:46:07 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc04 is failure!  sbatch: error: QOSMaxSubmitJobPerUserLimit
+sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+2021-01-12 23:46:07 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc05 is failure!  sbatch: error: QOSMaxSubmitJobPerUserLimit
+sbatch: error: Batch job submission failed: Job violates accounting/QOS policy (job submit limit, user's size and/or time limits)
+2021-01-12 23:46:08 +0000 :: hfe01 :: Task gdasenscalcinc01, jobid=15301285, in state FAILED (FAILED), ran for 5.0 seconds, exit status=25344, try=1 (of 2)
+2021-01-12 23:46:08 +0000 :: hfe01 :: Task gdasenscalcinc02, jobid=15301286, in state FAILED (FAILED), ran for 5.0 seconds, exit status=25344, try=1 (of 2)
+2021-01-12 23:46:08 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc01
+2021-01-12 23:46:08 +0000 :: hfe01 :: Submission status of gdasenscalcinc01 is pending at druby://hfe01:42380
+2021-01-12 23:46:08 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc02
+2021-01-12 23:46:08 +0000 :: hfe01 :: Submission status of gdasenscalcinc02 is pending at druby://hfe01:42380
+2021-01-12 23:46:08 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc03
+2021-01-12 23:46:08 +0000 :: hfe01 :: Submission status of gdasenscalcinc03 is pending at druby://hfe01:42380
+2021-01-12 23:46:08 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc04
+2021-01-12 23:46:08 +0000 :: hfe01 :: Submission status of gdasenscalcinc04 is pending at druby://hfe01:42380
+2021-01-12 23:46:08 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc05
+2021-01-12 23:46:08 +0000 :: hfe01 :: Submission status of gdasenscalcinc05 is pending at druby://hfe01:42380
+2021-01-12 23:47:55 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc01 is failure!  sbatch: error: Batch job submission failed: Invalid qos specification
+2021-01-12 23:47:55 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc02 is failure!  sbatch: error: Batch job submission failed: Invalid qos specification
+2021-01-12 23:47:55 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc03 is failure!  sbatch: error: Batch job submission failed: Invalid qos specification
+2021-01-12 23:47:55 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc04 is failure!  sbatch: error: Batch job submission failed: Invalid qos specification
+2021-01-12 23:47:55 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc05 is failure!  sbatch: error: Batch job submission failed: Invalid qos specification
+2021-01-12 23:48:15 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc01
+2021-01-12 23:48:15 +0000 :: hfe01 :: Submission status of gdasenscalcinc01 is pending at druby://hfe01:46240
+2021-01-12 23:48:15 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc02
+2021-01-12 23:48:15 +0000 :: hfe01 :: Submission status of gdasenscalcinc02 is pending at druby://hfe01:46240
+2021-01-12 23:48:15 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc03
+2021-01-12 23:48:15 +0000 :: hfe01 :: Submission status of gdasenscalcinc03 is pending at druby://hfe01:46240
+2021-01-12 23:48:15 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc04
+2021-01-12 23:48:15 +0000 :: hfe01 :: Submission status of gdasenscalcinc04 is pending at druby://hfe01:46240
+2021-01-12 23:48:15 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc05
+2021-01-12 23:48:15 +0000 :: hfe01 :: Submission status of gdasenscalcinc05 is pending at druby://hfe01:46240
+2021-01-12 23:49:37 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc01 is failure!  sbatch: error: Batch job submission failed: Invalid qos specification
+2021-01-12 23:49:37 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc02 is failure!  sbatch: error: Batch job submission failed: Invalid qos specification
+2021-01-12 23:49:37 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc03 is failure!  sbatch: error: Batch job submission failed: Invalid qos specification
+2021-01-12 23:49:37 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc04 is failure!  sbatch: error: Batch job submission failed: Invalid qos specification
+2021-01-12 23:49:37 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc05 is failure!  sbatch: error: Batch job submission failed: Invalid qos specification
+2021-01-12 23:49:37 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc01
+2021-01-12 23:49:37 +0000 :: hfe01 :: Submission status of gdasenscalcinc01 is pending at druby://hfe01:43922
+2021-01-12 23:49:37 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc02
+2021-01-12 23:49:37 +0000 :: hfe01 :: Submission status of gdasenscalcinc02 is pending at druby://hfe01:43922
+2021-01-12 23:49:37 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc03
+2021-01-12 23:49:37 +0000 :: hfe01 :: Submission status of gdasenscalcinc03 is pending at druby://hfe01:43922
+2021-01-12 23:49:37 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc04
+2021-01-12 23:49:37 +0000 :: hfe01 :: Submission status of gdasenscalcinc04 is pending at druby://hfe01:43922
+2021-01-12 23:49:37 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc05
+2021-01-12 23:49:37 +0000 :: hfe01 :: Submission status of gdasenscalcinc05 is pending at druby://hfe01:43922
+2021-01-12 23:59:25 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc01 is success, jobid=15301341
+2021-01-12 23:59:25 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc02 is success, jobid=15301342
+2021-01-12 23:59:25 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc03 is success, jobid=15301343
+2021-01-12 23:59:25 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc04 is success, jobid=15301344
+2021-01-12 23:59:25 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc05 is success, jobid=15301345
+2021-01-12 23:59:25 +0000 :: hfe01 :: Task gdasenscalcinc01, jobid=15301341, in state FAILED (FAILED), ran for 5.0 seconds, exit status=99, try=1 (of 2)
+2021-01-12 23:59:25 +0000 :: hfe01 :: Task gdasenscalcinc02, jobid=15301342, in state FAILED (FAILED), ran for 5.0 seconds, exit status=99, try=1 (of 2)
+2021-01-12 23:59:25 +0000 :: hfe01 :: Task gdasenscalcinc03, jobid=15301343, in state FAILED (FAILED), ran for 5.0 seconds, exit status=99, try=1 (of 2)
+2021-01-12 23:59:25 +0000 :: hfe01 :: Task gdasenscalcinc04, jobid=15301344, in state FAILED (FAILED), ran for 6.0 seconds, exit status=99, try=1 (of 2)
+2021-01-12 23:59:25 +0000 :: hfe01 :: Task gdasenscalcinc05, jobid=15301345, in state FAILED (FAILED), ran for 5.0 seconds, exit status=99, try=1 (of 2)
+2021-01-13 00:02:41 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc01
+2021-01-13 00:02:41 +0000 :: hfe01 :: Submission status of gdasenscalcinc01 is pending at druby://hfe01:45281
+2021-01-13 00:02:41 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc02
+2021-01-13 00:02:41 +0000 :: hfe01 :: Submission status of gdasenscalcinc02 is pending at druby://hfe01:45281
+2021-01-13 00:02:41 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc03
+2021-01-13 00:02:41 +0000 :: hfe01 :: Submission status of gdasenscalcinc03 is pending at druby://hfe01:45281
+2021-01-13 00:02:41 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc04
+2021-01-13 00:02:41 +0000 :: hfe01 :: Submission status of gdasenscalcinc04 is pending at druby://hfe01:45281
+2021-01-13 00:02:41 +0000 :: hfe01 :: Forcibly submitting gdasenscalcinc05
+2021-01-13 00:02:41 +0000 :: hfe01 :: Submission status of gdasenscalcinc05 is pending at druby://hfe01:45281
+2021-01-13 00:04:35 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc01 is success, jobid=15301604
+2021-01-13 00:04:36 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc02 is success, jobid=15301605
+2021-01-13 00:04:36 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc03 is success, jobid=15301606
+2021-01-13 00:04:36 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc04 is success, jobid=15301607
+2021-01-13 00:04:36 +0000 :: hfe01 :: Submission status of previously pending gdasenscalcinc05 is success, jobid=15301608
+2021-01-13 00:04:36 +0000 :: hfe01 :: Task gdasenscalcinc01, jobid=15301604, in state SUCCEEDED (COMPLETED), ran for 15.0 seconds, exit status=0, try=1 (of 2)
+2021-01-13 00:04:36 +0000 :: hfe01 :: Task gdasenscalcinc02, jobid=15301605, in state SUCCEEDED (COMPLETED), ran for 14.0 seconds, exit status=0, try=1 (of 2)
+2021-01-13 00:04:36 +0000 :: hfe01 :: Task gdasenscalcinc03, jobid=15301606, in state SUCCEEDED (COMPLETED), ran for 14.0 seconds, exit status=0, try=1 (of 2)
+2021-01-13 00:04:36 +0000 :: hfe01 :: Task gdasenscalcinc04, jobid=15301607, in state SUCCEEDED (COMPLETED), ran for 15.0 seconds, exit status=0, try=1 (of 2)
+2021-01-13 00:04:36 +0000 :: hfe01 :: Task gdasenscalcinc05, jobid=15301608, in state SUCCEEDED (COMPLETED), ran for 15.0 seconds, exit status=0, try=1 (of 2)
+2021-01-13 00:04:36 +0000 :: hfe01 :: Forcibly submitting gdasanal
+2021-01-13 00:04:36 +0000 :: hfe01 :: Submission status of gdasanal is pending at druby://hfe01:38224
+2021-01-13 00:14:15 +0000 :: hfe03 :: Submission status of previously pending gdasanal is success, jobid=15301641
+2021-01-13 00:14:15 +0000 :: hfe03 :: Task gdasanal, jobid=15301641, in state UNAVAILABLE (Unavailable)
+2021-01-13 00:15:01 +0000 :: hfe03 :: Task gdasanal, jobid=15301641, in state FAILED (FAILED), ran for 27.0 seconds, exit status=1, try=1 (of 2)
+2021-01-13 00:24:12 +0000 :: hfe03 :: Forcibly submitting gdasprepchem
+2021-01-13 00:24:12 +0000 :: hfe03 :: Submission status of gdasprepchem is pending at druby://hfe03:43910
+2021-01-13 00:24:23 +0000 :: hfe03 :: Submission status of previously pending gdasprepchem is success, jobid=15301914
+2021-01-13 00:24:23 +0000 :: hfe03 :: Task gdasprepchem, jobid=15301914, in state SUCCEEDED (COMPLETED), ran for 6.0 seconds, exit status=0, try=7 (of 2)
+2021-01-13 00:24:23 +0000 :: hfe03 :: Forcibly submitting gdascalcinc
+2021-01-13 00:24:23 +0000 :: hfe03 :: Submission status of gdascalcinc is pending at druby://hfe03:36110
+2021-01-13 00:24:27 +0000 :: hfe03 :: Submission status of previously pending gdascalcinc is success, jobid=15301915
+2021-01-13 00:24:27 +0000 :: hfe03 :: Task gdascalcinc, jobid=15301915, in state RUNNING (RUNNING)
+2021-01-13 00:24:45 +0000 :: hfe03 :: Task gdascalcinc, jobid=15301915, in state SUCCEEDED (COMPLETED), ran for 7.0 seconds, exit status=0, try=7 (of 2)
+2021-01-13 00:24:45 +0000 :: hfe03 :: Forcibly submitting gdasenscalcinc01
+2021-01-13 00:24:45 +0000 :: hfe03 :: Submission status of gdasenscalcinc01 is pending at druby://hfe03:37030
+2021-01-13 00:24:45 +0000 :: hfe03 :: Forcibly submitting gdasenscalcinc02
+2021-01-13 00:24:45 +0000 :: hfe03 :: Submission status of gdasenscalcinc02 is pending at druby://hfe03:37030
+2021-01-13 00:24:45 +0000 :: hfe03 :: Forcibly submitting gdasenscalcinc03
+2021-01-13 00:24:45 +0000 :: hfe03 :: Submission status of gdasenscalcinc03 is pending at druby://hfe03:37030
+2021-01-13 00:24:45 +0000 :: hfe03 :: Forcibly submitting gdasenscalcinc04
+2021-01-13 00:24:45 +0000 :: hfe03 :: Submission status of gdasenscalcinc04 is pending at druby://hfe03:37030
+2021-01-13 00:24:45 +0000 :: hfe03 :: Forcibly submitting gdasenscalcinc05
+2021-01-13 00:24:45 +0000 :: hfe03 :: Submission status of gdasenscalcinc05 is pending at druby://hfe03:37030
+2021-01-13 00:25:48 +0000 :: hfe03 :: Submission status of previously pending gdasenscalcinc01 is success, jobid=15301916
+2021-01-13 00:25:48 +0000 :: hfe03 :: Submission status of previously pending gdasenscalcinc02 is success, jobid=15301917
+2021-01-13 00:25:48 +0000 :: hfe03 :: Submission status of previously pending gdasenscalcinc03 is success, jobid=15301918
+2021-01-13 00:25:48 +0000 :: hfe03 :: Submission status of previously pending gdasenscalcinc04 is success, jobid=15301919
+2021-01-13 00:25:48 +0000 :: hfe03 :: Submission status of previously pending gdasenscalcinc05 is success, jobid=15301920
+2021-01-13 00:25:49 +0000 :: hfe03 :: Task gdasenscalcinc01, jobid=15301916, in state SUCCEEDED (COMPLETED), ran for 14.0 seconds, exit status=0, try=3 (of 2)
+2021-01-13 00:25:49 +0000 :: hfe03 :: Task gdasenscalcinc02, jobid=15301917, in state SUCCEEDED (COMPLETED), ran for 13.0 seconds, exit status=0, try=3 (of 2)
+2021-01-13 00:25:49 +0000 :: hfe03 :: Task gdasenscalcinc03, jobid=15301918, in state SUCCEEDED (COMPLETED), ran for 14.0 seconds, exit status=0, try=3 (of 2)
+2021-01-13 00:25:49 +0000 :: hfe03 :: Task gdasenscalcinc04, jobid=15301919, in state SUCCEEDED (COMPLETED), ran for 15.0 seconds, exit status=0, try=3 (of 2)
+2021-01-13 00:25:49 +0000 :: hfe03 :: Task gdasenscalcinc05, jobid=15301920, in state SUCCEEDED (COMPLETED), ran for 14.0 seconds, exit status=0, try=3 (of 2)
+2021-01-13 00:25:49 +0000 :: hfe03 :: Forcibly submitting gdasanal
+2021-01-13 00:25:49 +0000 :: hfe03 :: Submission status of gdasanal is pending at druby://hfe03:38972
+2021-01-13 01:00:24 +0000 :: hfe01 :: Submission status of previously pending gdasanal is success, jobid=15301969
+2021-01-13 01:00:25 +0000 :: hfe01 :: Task gdasanal, jobid=15301969, in state UNAVAILABLE (Unavailable)
+2021-01-13 01:00:32 +0000 :: hfe01 :: Task gdasanal, jobid=15301969, in state UNAVAILABLE (Unavailable)
+2021-01-13 01:00:35 +0000 :: hfe01 :: Forcibly submitting gdasanal
+2021-01-13 01:00:35 +0000 :: hfe01 :: Submission status of gdasanal is pending at druby://hfe01:37459
+2021-01-13 01:05:41 +0000 :: hfe01 :: Submission status of previously pending gdasanal is success, jobid=15302442
+2021-01-13 01:05:41 +0000 :: hfe01 :: Task gdasanal, jobid=15302442, in state SUCCEEDED (COMPLETED), ran for 219.0 seconds, exit status=0, try=1 (of 2)
+2021-01-13 01:05:41 +0000 :: hfe01 :: Forcibly submitting gdaseupd
+2021-01-13 01:05:41 +0000 :: hfe01 :: Submission status of gdaseupd is pending at druby://hfe01:35548
+2021-01-13 01:06:48 +0000 :: hfe01 :: Submission status of previously pending gdaseupd is success, jobid=15302522
+2021-01-13 01:06:48 +0000 :: hfe01 :: Task gdaseupd, jobid=15302522, in state FAILED (FAILED), ran for 3.0 seconds, exit status=32512, try=1 (of 2)
+2021-01-13 01:06:48 +0000 :: hfe01 :: Forcibly submitting gdaseupd
+2021-01-13 01:06:48 +0000 :: hfe01 :: Submission status of gdaseupd is pending at druby://hfe01:39301
+2021-01-13 01:16:59 +0000 :: hfe01 :: Submission status of previously pending gdaseupd is success, jobid=15302528
+2021-01-13 01:16:59 +0000 :: hfe01 :: Task gdaseupd, jobid=15302528, in state SUCCEEDED (COMPLETED), ran for 352.0 seconds, exit status=0, try=3 (of 2)
+2021-01-13 01:16:59 +0000 :: hfe01 :: Forcibly submitting gdasaodluts01
+2021-01-13 01:16:59 +0000 :: hfe01 :: Submission status of gdasaodluts01 is pending at druby://hfe01:40052
+2021-01-13 01:16:59 +0000 :: hfe01 :: Forcibly submitting gdasaodluts02
+2021-01-13 01:16:59 +0000 :: hfe01 :: Submission status of gdasaodluts02 is pending at druby://hfe01:40052
+2021-01-13 01:16:59 +0000 :: hfe01 :: Forcibly submitting gdasaodluts03
+2021-01-13 01:16:59 +0000 :: hfe01 :: Submission status of gdasaodluts03 is pending at druby://hfe01:40052
+2021-01-13 01:16:59 +0000 :: hfe01 :: Forcibly submitting gdasaodluts04
+2021-01-13 01:16:59 +0000 :: hfe01 :: Submission status of gdasaodluts04 is pending at druby://hfe01:40052
+2021-01-13 01:16:59 +0000 :: hfe01 :: Forcibly submitting gdasaodluts05
+2021-01-13 01:16:59 +0000 :: hfe01 :: Submission status of gdasaodluts05 is pending at druby://hfe01:40052
+2021-01-13 01:23:43 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts01 is success, jobid=15302678
+2021-01-13 01:23:43 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts02 is success, jobid=15302679
+2021-01-13 01:23:43 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts03 is success, jobid=15302680
+2021-01-13 01:23:43 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts04 is success, jobid=15302681
+2021-01-13 01:23:43 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts05 is success, jobid=15302682
+2021-01-13 01:23:43 +0000 :: hfe01 :: Task gdasaodluts01, jobid=15302678, in state FAILED (FAILED), ran for 3.0 seconds, exit status=127, try=1 (of 2)
+2021-01-13 01:23:43 +0000 :: hfe01 :: Task gdasaodluts02, jobid=15302679, in state FAILED (FAILED), ran for 3.0 seconds, exit status=127, try=1 (of 2)
+2021-01-13 01:23:43 +0000 :: hfe01 :: Task gdasaodluts03, jobid=15302680, in state FAILED (FAILED), ran for 3.0 seconds, exit status=127, try=1 (of 2)
+2021-01-13 01:23:43 +0000 :: hfe01 :: Task gdasaodluts04, jobid=15302681, in state FAILED (FAILED), ran for 3.0 seconds, exit status=127, try=1 (of 2)
+2021-01-13 01:23:43 +0000 :: hfe01 :: Task gdasaodluts05, jobid=15302682, in state FAILED (FAILED), ran for 3.0 seconds, exit status=127, try=1 (of 2)
+2021-01-13 01:23:43 +0000 :: hfe01 :: Forcibly submitting gdasaodluts01
+2021-01-13 01:23:43 +0000 :: hfe01 :: Submission status of gdasaodluts01 is pending at druby://hfe01:43597
+2021-01-13 01:23:43 +0000 :: hfe01 :: Forcibly submitting gdasaodluts02
+2021-01-13 01:23:43 +0000 :: hfe01 :: Submission status of gdasaodluts02 is pending at druby://hfe01:43597
+2021-01-13 01:23:43 +0000 :: hfe01 :: Forcibly submitting gdasaodluts03
+2021-01-13 01:23:43 +0000 :: hfe01 :: Submission status of gdasaodluts03 is pending at druby://hfe01:43597
+2021-01-13 01:23:43 +0000 :: hfe01 :: Forcibly submitting gdasaodluts04
+2021-01-13 01:23:44 +0000 :: hfe01 :: Submission status of gdasaodluts04 is pending at druby://hfe01:43597
+2021-01-13 01:23:44 +0000 :: hfe01 :: Forcibly submitting gdasaodluts05
+2021-01-13 01:23:44 +0000 :: hfe01 :: Submission status of gdasaodluts05 is pending at druby://hfe01:43597
+2021-01-13 01:25:26 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts01 is success, jobid=15302771
+2021-01-13 01:25:26 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts02 is success, jobid=15302772
+2021-01-13 01:25:26 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts03 is success, jobid=15302773
+2021-01-13 01:25:26 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts04 is success, jobid=15302774
+2021-01-13 01:25:26 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts05 is success, jobid=15302775
+2021-01-13 01:25:26 +0000 :: hfe01 :: Task gdasaodluts01, jobid=15302771, in state DEAD (FAILED), ran for 17.0 seconds, exit status=256, try=3 (of 2)
+2021-01-13 01:25:26 +0000 :: hfe01 :: Task gdasaodluts02, jobid=15302772, in state DEAD (FAILED), ran for 17.0 seconds, exit status=256, try=3 (of 2)
+2021-01-13 01:25:26 +0000 :: hfe01 :: Task gdasaodluts03, jobid=15302773, in state DEAD (FAILED), ran for 17.0 seconds, exit status=256, try=3 (of 2)
+2021-01-13 01:25:26 +0000 :: hfe01 :: Task gdasaodluts04, jobid=15302774, in state DEAD (FAILED), ran for 17.0 seconds, exit status=256, try=3 (of 2)
+2021-01-13 01:25:26 +0000 :: hfe01 :: Task gdasaodluts05, jobid=15302775, in state DEAD (FAILED), ran for 17.0 seconds, exit status=256, try=3 (of 2)
+2021-01-13 01:25:26 +0000 :: hfe01 :: Forcibly submitting gdasaodluts01
+2021-01-13 01:25:26 +0000 :: hfe01 :: Submission status of gdasaodluts01 is pending at druby://hfe01:44571
+2021-01-13 01:25:26 +0000 :: hfe01 :: Forcibly submitting gdasaodluts02
+2021-01-13 01:25:26 +0000 :: hfe01 :: Submission status of gdasaodluts02 is pending at druby://hfe01:44571
+2021-01-13 01:25:26 +0000 :: hfe01 :: Forcibly submitting gdasaodluts03
+2021-01-13 01:25:26 +0000 :: hfe01 :: Submission status of gdasaodluts03 is pending at druby://hfe01:44571
+2021-01-13 01:25:26 +0000 :: hfe01 :: Forcibly submitting gdasaodluts04
+2021-01-13 01:25:26 +0000 :: hfe01 :: Submission status of gdasaodluts04 is pending at druby://hfe01:44571
+2021-01-13 01:25:26 +0000 :: hfe01 :: Forcibly submitting gdasaodluts05
+2021-01-13 01:25:26 +0000 :: hfe01 :: Submission status of gdasaodluts05 is pending at druby://hfe01:44571
+2021-01-13 01:29:16 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts01 is success, jobid=15302845
+2021-01-13 01:29:16 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts02 is success, jobid=15302846
+2021-01-13 01:29:16 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts03 is success, jobid=15302847
+2021-01-13 01:29:16 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts04 is success, jobid=15302848
+2021-01-13 01:29:16 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts05 is success, jobid=15302849
+2021-01-13 01:29:16 +0000 :: hfe01 :: Task gdasaodluts01, jobid=15302845, in state DEAD (FAILED), ran for 14.0 seconds, exit status=256, try=5 (of 2)
+2021-01-13 01:29:16 +0000 :: hfe01 :: Task gdasaodluts02, jobid=15302846, in state DEAD (FAILED), ran for 14.0 seconds, exit status=256, try=5 (of 2)
+2021-01-13 01:29:16 +0000 :: hfe01 :: Task gdasaodluts03, jobid=15302847, in state DEAD (FAILED), ran for 13.0 seconds, exit status=256, try=5 (of 2)
+2021-01-13 01:29:16 +0000 :: hfe01 :: Task gdasaodluts04, jobid=15302848, in state DEAD (FAILED), ran for 14.0 seconds, exit status=256, try=5 (of 2)
+2021-01-13 01:29:16 +0000 :: hfe01 :: Task gdasaodluts05, jobid=15302849, in state DEAD (FAILED), ran for 13.0 seconds, exit status=256, try=5 (of 2)
+2021-01-13 01:29:16 +0000 :: hfe01 :: Forcibly submitting gdasaodluts01
+2021-01-13 01:29:16 +0000 :: hfe01 :: Submission status of gdasaodluts01 is pending at druby://hfe01:45824
+2021-01-13 01:29:16 +0000 :: hfe01 :: Forcibly submitting gdasaodluts02
+2021-01-13 01:29:16 +0000 :: hfe01 :: Submission status of gdasaodluts02 is pending at druby://hfe01:45824
+2021-01-13 01:29:16 +0000 :: hfe01 :: Forcibly submitting gdasaodluts03
+2021-01-13 01:29:16 +0000 :: hfe01 :: Submission status of gdasaodluts03 is pending at druby://hfe01:45824
+2021-01-13 01:29:16 +0000 :: hfe01 :: Forcibly submitting gdasaodluts04
+2021-01-13 01:29:16 +0000 :: hfe01 :: Submission status of gdasaodluts04 is pending at druby://hfe01:45824
+2021-01-13 01:29:16 +0000 :: hfe01 :: Forcibly submitting gdasaodluts05
+2021-01-13 01:29:16 +0000 :: hfe01 :: Submission status of gdasaodluts05 is pending at druby://hfe01:45824
+2021-01-13 01:31:25 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts01 is success, jobid=15302889
+2021-01-13 01:31:25 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts02 is success, jobid=15302890
+2021-01-13 01:31:25 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts03 is success, jobid=15302891
+2021-01-13 01:31:25 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts04 is success, jobid=15302892
+2021-01-13 01:31:25 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts05 is success, jobid=15302893
+2021-01-13 01:31:26 +0000 :: hfe01 :: Task gdasaodluts01, jobid=15302889, in state DEAD (FAILED), ran for 14.0 seconds, exit status=256, try=7 (of 2)
+2021-01-13 01:31:26 +0000 :: hfe01 :: Task gdasaodluts02, jobid=15302890, in state DEAD (FAILED), ran for 14.0 seconds, exit status=256, try=7 (of 2)
+2021-01-13 01:31:26 +0000 :: hfe01 :: Task gdasaodluts03, jobid=15302891, in state DEAD (FAILED), ran for 19.0 seconds, exit status=256, try=7 (of 2)
+2021-01-13 01:31:26 +0000 :: hfe01 :: Task gdasaodluts04, jobid=15302892, in state DEAD (FAILED), ran for 15.0 seconds, exit status=256, try=7 (of 2)
+2021-01-13 01:31:26 +0000 :: hfe01 :: Task gdasaodluts05, jobid=15302893, in state DEAD (FAILED), ran for 15.0 seconds, exit status=256, try=7 (of 2)
+2021-01-13 01:31:26 +0000 :: hfe01 :: Forcibly submitting gdasaodluts01
+2021-01-13 01:31:26 +0000 :: hfe01 :: Submission status of gdasaodluts01 is pending at druby://hfe01:42336
+2021-01-13 01:31:26 +0000 :: hfe01 :: Forcibly submitting gdasaodluts02
+2021-01-13 01:31:26 +0000 :: hfe01 :: Submission status of gdasaodluts02 is pending at druby://hfe01:42336
+2021-01-13 01:31:26 +0000 :: hfe01 :: Forcibly submitting gdasaodluts03
+2021-01-13 01:31:26 +0000 :: hfe01 :: Submission status of gdasaodluts03 is pending at druby://hfe01:42336
+2021-01-13 01:31:26 +0000 :: hfe01 :: Forcibly submitting gdasaodluts04
+2021-01-13 01:31:26 +0000 :: hfe01 :: Submission status of gdasaodluts04 is pending at druby://hfe01:42336
+2021-01-13 01:31:26 +0000 :: hfe01 :: Forcibly submitting gdasaodluts05
+2021-01-13 01:31:26 +0000 :: hfe01 :: Submission status of gdasaodluts05 is pending at druby://hfe01:42336
+2021-01-13 01:34:43 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts01 is success, jobid=15302966
+2021-01-13 01:34:43 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts02 is success, jobid=15302967
+2021-01-13 01:34:43 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts03 is success, jobid=15302968
+2021-01-13 01:34:43 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts04 is success, jobid=15302969
+2021-01-13 01:34:43 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts05 is success, jobid=15302970
+2021-01-13 01:34:43 +0000 :: hfe01 :: Task gdasaodluts01, jobid=15302966, in state DEAD (FAILED), ran for 13.0 seconds, exit status=256, try=9 (of 2)
+2021-01-13 01:34:43 +0000 :: hfe01 :: Task gdasaodluts02, jobid=15302967, in state DEAD (FAILED), ran for 17.0 seconds, exit status=256, try=9 (of 2)
+2021-01-13 01:34:43 +0000 :: hfe01 :: Task gdasaodluts03, jobid=15302968, in state DEAD (FAILED), ran for 13.0 seconds, exit status=256, try=9 (of 2)
+2021-01-13 01:34:43 +0000 :: hfe01 :: Task gdasaodluts04, jobid=15302969, in state DEAD (FAILED), ran for 14.0 seconds, exit status=256, try=9 (of 2)
+2021-01-13 01:34:43 +0000 :: hfe01 :: Task gdasaodluts05, jobid=15302970, in state DEAD (FAILED), ran for 13.0 seconds, exit status=256, try=9 (of 2)
+2021-01-13 01:34:43 +0000 :: hfe01 :: Forcibly submitting gdasaodluts01
+2021-01-13 01:34:43 +0000 :: hfe01 :: Submission status of gdasaodluts01 is pending at druby://hfe01:46148
+2021-01-13 01:34:43 +0000 :: hfe01 :: Forcibly submitting gdasaodluts02
+2021-01-13 01:34:43 +0000 :: hfe01 :: Submission status of gdasaodluts02 is pending at druby://hfe01:46148
+2021-01-13 01:34:43 +0000 :: hfe01 :: Forcibly submitting gdasaodluts03
+2021-01-13 01:34:43 +0000 :: hfe01 :: Submission status of gdasaodluts03 is pending at druby://hfe01:46148
+2021-01-13 01:34:43 +0000 :: hfe01 :: Forcibly submitting gdasaodluts04
+2021-01-13 01:34:43 +0000 :: hfe01 :: Submission status of gdasaodluts04 is pending at druby://hfe01:46148
+2021-01-13 01:34:43 +0000 :: hfe01 :: Forcibly submitting gdasaodluts05
+2021-01-13 01:34:43 +0000 :: hfe01 :: Submission status of gdasaodluts05 is pending at druby://hfe01:46148
+2021-01-13 01:38:54 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts01 is success, jobid=15303012
+2021-01-13 01:38:54 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts02 is success, jobid=15303013
+2021-01-13 01:38:54 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts03 is success, jobid=15303015
+2021-01-13 01:38:54 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts04 is success, jobid=15303014
+2021-01-13 01:38:54 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts05 is success, jobid=15303016
+2021-01-13 01:38:54 +0000 :: hfe01 :: Task gdasaodluts01, jobid=15303012, in state DEAD (FAILED), ran for 16.0 seconds, exit status=256, try=11 (of 2)
+2021-01-13 01:38:54 +0000 :: hfe01 :: Task gdasaodluts02, jobid=15303013, in state DEAD (FAILED), ran for 16.0 seconds, exit status=256, try=11 (of 2)
+2021-01-13 01:38:54 +0000 :: hfe01 :: Task gdasaodluts03, jobid=15303015, in state DEAD (FAILED), ran for 16.0 seconds, exit status=256, try=11 (of 2)
+2021-01-13 01:38:54 +0000 :: hfe01 :: Task gdasaodluts04, jobid=15303014, in state DEAD (FAILED), ran for 17.0 seconds, exit status=256, try=11 (of 2)
+2021-01-13 01:38:54 +0000 :: hfe01 :: Task gdasaodluts05, jobid=15303016, in state DEAD (FAILED), ran for 16.0 seconds, exit status=256, try=11 (of 2)
+2021-01-13 01:38:54 +0000 :: hfe01 :: Forcibly submitting gdasaodluts01
+2021-01-13 01:38:54 +0000 :: hfe01 :: Submission status of gdasaodluts01 is pending at druby://hfe01:36126
+2021-01-13 01:38:54 +0000 :: hfe01 :: Forcibly submitting gdasaodluts02
+2021-01-13 01:38:54 +0000 :: hfe01 :: Submission status of gdasaodluts02 is pending at druby://hfe01:36126
+2021-01-13 01:38:54 +0000 :: hfe01 :: Forcibly submitting gdasaodluts03
+2021-01-13 01:38:54 +0000 :: hfe01 :: Submission status of gdasaodluts03 is pending at druby://hfe01:36126
+2021-01-13 01:38:54 +0000 :: hfe01 :: Forcibly submitting gdasaodluts04
+2021-01-13 01:38:54 +0000 :: hfe01 :: Submission status of gdasaodluts04 is pending at druby://hfe01:36126
+2021-01-13 01:38:54 +0000 :: hfe01 :: Forcibly submitting gdasaodluts05
+2021-01-13 01:38:54 +0000 :: hfe01 :: Submission status of gdasaodluts05 is pending at druby://hfe01:36126
+2021-01-13 01:42:13 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts01 is success, jobid=15303125
+2021-01-13 01:42:13 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts02 is success, jobid=15303126
+2021-01-13 01:42:13 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts03 is success, jobid=15303128
+2021-01-13 01:42:13 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts04 is success, jobid=15303127
+2021-01-13 01:42:13 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts05 is success, jobid=15303129
+2021-01-13 01:42:13 +0000 :: hfe01 :: Task gdasaodluts01, jobid=15303125, in state DEAD (FAILED), ran for 22.0 seconds, exit status=256, try=13 (of 2)
+2021-01-13 01:42:13 +0000 :: hfe01 :: Task gdasaodluts02, jobid=15303126, in state DEAD (FAILED), ran for 13.0 seconds, exit status=256, try=13 (of 2)
+2021-01-13 01:42:13 +0000 :: hfe01 :: Task gdasaodluts03, jobid=15303128, in state DEAD (FAILED), ran for 14.0 seconds, exit status=256, try=13 (of 2)
+2021-01-13 01:42:13 +0000 :: hfe01 :: Task gdasaodluts04, jobid=15303127, in state DEAD (FAILED), ran for 14.0 seconds, exit status=256, try=13 (of 2)
+2021-01-13 01:42:13 +0000 :: hfe01 :: Task gdasaodluts05, jobid=15303129, in state DEAD (FAILED), ran for 15.0 seconds, exit status=256, try=13 (of 2)
+2021-01-13 01:42:13 +0000 :: hfe01 :: Forcibly submitting gdasaodluts01
+2021-01-13 01:42:13 +0000 :: hfe01 :: Submission status of gdasaodluts01 is pending at druby://hfe01:34569
+2021-01-13 01:42:13 +0000 :: hfe01 :: Forcibly submitting gdasaodluts02
+2021-01-13 01:42:13 +0000 :: hfe01 :: Submission status of gdasaodluts02 is pending at druby://hfe01:34569
+2021-01-13 01:42:13 +0000 :: hfe01 :: Forcibly submitting gdasaodluts03
+2021-01-13 01:42:13 +0000 :: hfe01 :: Submission status of gdasaodluts03 is pending at druby://hfe01:34569
+2021-01-13 01:42:13 +0000 :: hfe01 :: Forcibly submitting gdasaodluts04
+2021-01-13 01:42:13 +0000 :: hfe01 :: Submission status of gdasaodluts04 is pending at druby://hfe01:34569
+2021-01-13 01:42:13 +0000 :: hfe01 :: Forcibly submitting gdasaodluts05
+2021-01-13 01:42:13 +0000 :: hfe01 :: Submission status of gdasaodluts05 is pending at druby://hfe01:34569
+2021-01-13 01:44:50 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts01 is success, jobid=15303158
+2021-01-13 01:44:50 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts02 is success, jobid=15303159
+2021-01-13 01:44:50 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts03 is success, jobid=15303160
+2021-01-13 01:44:50 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts04 is success, jobid=15303161
+2021-01-13 01:44:50 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts05 is success, jobid=15303162
+2021-01-13 01:44:51 +0000 :: hfe01 :: Task gdasaodluts01, jobid=15303158, in state DEAD (FAILED), ran for 17.0 seconds, exit status=256, try=15 (of 2)
+2021-01-13 01:44:51 +0000 :: hfe01 :: Task gdasaodluts02, jobid=15303159, in state DEAD (FAILED), ran for 13.0 seconds, exit status=256, try=15 (of 2)
+2021-01-13 01:44:51 +0000 :: hfe01 :: Task gdasaodluts03, jobid=15303160, in state DEAD (FAILED), ran for 13.0 seconds, exit status=256, try=15 (of 2)
+2021-01-13 01:44:51 +0000 :: hfe01 :: Task gdasaodluts04, jobid=15303161, in state DEAD (FAILED), ran for 14.0 seconds, exit status=256, try=15 (of 2)
+2021-01-13 01:44:51 +0000 :: hfe01 :: Task gdasaodluts05, jobid=15303162, in state DEAD (FAILED), ran for 22.0 seconds, exit status=256, try=15 (of 2)
+2021-01-13 01:44:51 +0000 :: hfe01 :: Forcibly submitting gdasaodluts01
+2021-01-13 01:44:51 +0000 :: hfe01 :: Submission status of gdasaodluts01 is pending at druby://hfe01:34456
+2021-01-13 01:44:51 +0000 :: hfe01 :: Forcibly submitting gdasaodluts02
+2021-01-13 01:44:51 +0000 :: hfe01 :: Submission status of gdasaodluts02 is pending at druby://hfe01:34456
+2021-01-13 01:44:51 +0000 :: hfe01 :: Forcibly submitting gdasaodluts03
+2021-01-13 01:44:51 +0000 :: hfe01 :: Submission status of gdasaodluts03 is pending at druby://hfe01:34456
+2021-01-13 01:44:51 +0000 :: hfe01 :: Forcibly submitting gdasaodluts04
+2021-01-13 01:44:51 +0000 :: hfe01 :: Submission status of gdasaodluts04 is pending at druby://hfe01:34456
+2021-01-13 01:44:51 +0000 :: hfe01 :: Forcibly submitting gdasaodluts05
+2021-01-13 01:44:51 +0000 :: hfe01 :: Submission status of gdasaodluts05 is pending at druby://hfe01:34456
+2021-01-13 01:47:12 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts01 is success, jobid=15303178
+2021-01-13 01:47:12 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts02 is success, jobid=15303179
+2021-01-13 01:47:12 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts03 is success, jobid=15303180
+2021-01-13 01:47:12 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts04 is success, jobid=15303181
+2021-01-13 01:47:12 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts05 is success, jobid=15303182
+2021-01-13 01:47:12 +0000 :: hfe01 :: Task gdasaodluts01, jobid=15303178, in state DEAD (CANCELLED), ran for 49.0 seconds, exit status=15, try=17 (of 2)
+2021-01-13 01:47:12 +0000 :: hfe01 :: Task gdasaodluts02, jobid=15303179, in state DEAD (CANCELLED), ran for 49.0 seconds, exit status=15, try=17 (of 2)
+2021-01-13 01:47:12 +0000 :: hfe01 :: Task gdasaodluts03, jobid=15303180, in state DEAD (CANCELLED), ran for 49.0 seconds, exit status=15, try=17 (of 2)
+2021-01-13 01:47:12 +0000 :: hfe01 :: Task gdasaodluts04, jobid=15303181, in state DEAD (CANCELLED), ran for 49.0 seconds, exit status=15, try=17 (of 2)
+2021-01-13 01:47:12 +0000 :: hfe01 :: Task gdasaodluts05, jobid=15303182, in state DEAD (CANCELLED), ran for 49.0 seconds, exit status=15, try=17 (of 2)
+2021-01-13 01:47:12 +0000 :: hfe01 :: Forcibly submitting gdasaodluts01
+2021-01-13 01:47:12 +0000 :: hfe01 :: Submission status of gdasaodluts01 is pending at druby://hfe01:39148
+2021-01-13 01:47:12 +0000 :: hfe01 :: Forcibly submitting gdasaodluts02
+2021-01-13 01:47:12 +0000 :: hfe01 :: Submission status of gdasaodluts02 is pending at druby://hfe01:39148
+2021-01-13 01:47:12 +0000 :: hfe01 :: Forcibly submitting gdasaodluts03
+2021-01-13 01:47:12 +0000 :: hfe01 :: Submission status of gdasaodluts03 is pending at druby://hfe01:39148
+2021-01-13 01:47:12 +0000 :: hfe01 :: Forcibly submitting gdasaodluts04
+2021-01-13 01:47:12 +0000 :: hfe01 :: Submission status of gdasaodluts04 is pending at druby://hfe01:39148
+2021-01-13 01:47:12 +0000 :: hfe01 :: Forcibly submitting gdasaodluts05
+2021-01-13 01:47:12 +0000 :: hfe01 :: Submission status of gdasaodluts05 is pending at druby://hfe01:39148
+2021-01-13 01:48:13 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts01 is success, jobid=15303244
+2021-01-13 01:48:13 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts02 is success, jobid=15303245
+2021-01-13 01:48:13 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts03 is success, jobid=15303246
+2021-01-13 01:48:13 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts04 is success, jobid=15303247
+2021-01-13 01:48:13 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts05 is success, jobid=15303248
+2021-01-13 01:48:13 +0000 :: hfe01 :: Task gdasaodluts01, jobid=15303244, in state DEAD (CANCELLED), ran for 39.0 seconds, exit status=15, try=19 (of 2)
+2021-01-13 01:48:13 +0000 :: hfe01 :: Task gdasaodluts02, jobid=15303245, in state DEAD (CANCELLED), ran for 39.0 seconds, exit status=15, try=19 (of 2)
+2021-01-13 01:48:13 +0000 :: hfe01 :: Task gdasaodluts03, jobid=15303246, in state DEAD (CANCELLED), ran for 39.0 seconds, exit status=15, try=19 (of 2)
+2021-01-13 01:48:13 +0000 :: hfe01 :: Task gdasaodluts04, jobid=15303247, in state DEAD (CANCELLED), ran for 39.0 seconds, exit status=15, try=19 (of 2)
+2021-01-13 01:48:13 +0000 :: hfe01 :: Task gdasaodluts05, jobid=15303248, in state DEAD (CANCELLED), ran for 39.0 seconds, exit status=15, try=19 (of 2)
+2021-01-13 01:48:13 +0000 :: hfe01 :: Forcibly submitting gdasaodluts01
+2021-01-13 01:48:13 +0000 :: hfe01 :: Submission status of gdasaodluts01 is pending at druby://hfe01:45972
+2021-01-13 01:48:13 +0000 :: hfe01 :: Forcibly submitting gdasaodluts02
+2021-01-13 01:48:13 +0000 :: hfe01 :: Submission status of gdasaodluts02 is pending at druby://hfe01:45972
+2021-01-13 01:48:13 +0000 :: hfe01 :: Forcibly submitting gdasaodluts03
+2021-01-13 01:48:13 +0000 :: hfe01 :: Submission status of gdasaodluts03 is pending at druby://hfe01:45972
+2021-01-13 01:48:13 +0000 :: hfe01 :: Forcibly submitting gdasaodluts04
+2021-01-13 01:48:13 +0000 :: hfe01 :: Submission status of gdasaodluts04 is pending at druby://hfe01:45972
+2021-01-13 01:48:13 +0000 :: hfe01 :: Forcibly submitting gdasaodluts05
+2021-01-13 01:48:13 +0000 :: hfe01 :: Submission status of gdasaodluts05 is pending at druby://hfe01:45972
+2021-01-13 01:50:09 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts01 is success, jobid=15303256
+2021-01-13 01:50:09 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts02 is success, jobid=15303257
+2021-01-13 01:50:09 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts03 is success, jobid=15303258
+2021-01-13 01:50:09 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts04 is success, jobid=15303259
+2021-01-13 01:50:09 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts05 is success, jobid=15303260
+2021-01-13 01:50:09 +0000 :: hfe01 :: Task gdasaodluts01, jobid=15303256, in state DEAD (FAILED), ran for 16.0 seconds, exit status=256, try=21 (of 2)
+2021-01-13 01:50:09 +0000 :: hfe01 :: Task gdasaodluts02, jobid=15303257, in state DEAD (FAILED), ran for 17.0 seconds, exit status=256, try=21 (of 2)
+2021-01-13 01:50:09 +0000 :: hfe01 :: Task gdasaodluts03, jobid=15303258, in state DEAD (FAILED), ran for 15.0 seconds, exit status=256, try=21 (of 2)
+2021-01-13 01:50:09 +0000 :: hfe01 :: Task gdasaodluts04, jobid=15303259, in state DEAD (FAILED), ran for 15.0 seconds, exit status=256, try=21 (of 2)
+2021-01-13 01:50:09 +0000 :: hfe01 :: Task gdasaodluts05, jobid=15303260, in state DEAD (FAILED), ran for 14.0 seconds, exit status=256, try=21 (of 2)
+2021-01-13 01:50:09 +0000 :: hfe01 :: Forcibly submitting gdasaodluts01
+2021-01-13 01:50:09 +0000 :: hfe01 :: Submission status of gdasaodluts01 is pending at druby://hfe01:33125
+2021-01-13 01:50:09 +0000 :: hfe01 :: Forcibly submitting gdasaodluts02
+2021-01-13 01:50:09 +0000 :: hfe01 :: Submission status of gdasaodluts02 is pending at druby://hfe01:33125
+2021-01-13 01:50:09 +0000 :: hfe01 :: Forcibly submitting gdasaodluts03
+2021-01-13 01:50:09 +0000 :: hfe01 :: Submission status of gdasaodluts03 is pending at druby://hfe01:33125
+2021-01-13 01:50:09 +0000 :: hfe01 :: Forcibly submitting gdasaodluts04
+2021-01-13 01:50:09 +0000 :: hfe01 :: Submission status of gdasaodluts04 is pending at druby://hfe01:33125
+2021-01-13 01:50:09 +0000 :: hfe01 :: Forcibly submitting gdasaodluts05
+2021-01-13 01:50:09 +0000 :: hfe01 :: Submission status of gdasaodluts05 is pending at druby://hfe01:33125
+2021-01-13 01:58:25 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts01 is success, jobid=15303284
+2021-01-13 01:58:25 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts02 is success, jobid=15303285
+2021-01-13 01:58:25 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts03 is success, jobid=15303286
+2021-01-13 01:58:25 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts04 is success, jobid=15303287
+2021-01-13 01:58:25 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts05 is success, jobid=15303288
+2021-01-13 01:58:25 +0000 :: hfe01 :: Task gdasaodluts01, jobid=15303284, in state UNKNOWN (CANCELLED by 10872)
+2021-01-13 01:58:25 +0000 :: hfe01 :: Task gdasaodluts02, jobid=15303285, in state UNKNOWN (CANCELLED by 10872)
+2021-01-13 01:58:25 +0000 :: hfe01 :: Task gdasaodluts03, jobid=15303286, in state UNKNOWN (CANCELLED by 10872)
+2021-01-13 01:58:25 +0000 :: hfe01 :: Task gdasaodluts04, jobid=15303287, in state UNKNOWN (CANCELLED by 10872)
+2021-01-13 01:58:26 +0000 :: hfe01 :: Task gdasaodluts05, jobid=15303288, in state UNKNOWN (CANCELLED by 10872)
+2021-01-13 01:58:33 +0000 :: hfe01 :: Task gdasaodluts01, jobid=15303284, in state UNKNOWN (CANCELLED by 10872)
+2021-01-13 01:58:33 +0000 :: hfe01 :: Task gdasaodluts02, jobid=15303285, in state UNKNOWN (CANCELLED by 10872)
+2021-01-13 01:58:33 +0000 :: hfe01 :: Task gdasaodluts03, jobid=15303286, in state UNKNOWN (CANCELLED by 10872)
+2021-01-13 01:58:33 +0000 :: hfe01 :: Task gdasaodluts04, jobid=15303287, in state UNKNOWN (CANCELLED by 10872)
+2021-01-13 01:58:33 +0000 :: hfe01 :: Task gdasaodluts05, jobid=15303288, in state UNKNOWN (CANCELLED by 10872)
+2021-01-13 01:58:36 +0000 :: hfe01 :: Forcibly submitting gdasaodluts01
+2021-01-13 01:58:36 +0000 :: hfe01 :: Submission status of gdasaodluts01 is pending at druby://hfe01:42854
+2021-01-13 01:58:36 +0000 :: hfe01 :: Forcibly submitting gdasaodluts02
+2021-01-13 01:58:36 +0000 :: hfe01 :: Submission status of gdasaodluts02 is pending at druby://hfe01:42854
+2021-01-13 01:58:36 +0000 :: hfe01 :: Forcibly submitting gdasaodluts03
+2021-01-13 01:58:36 +0000 :: hfe01 :: Submission status of gdasaodluts03 is pending at druby://hfe01:42854
+2021-01-13 01:58:36 +0000 :: hfe01 :: Forcibly submitting gdasaodluts04
+2021-01-13 01:58:36 +0000 :: hfe01 :: Submission status of gdasaodluts04 is pending at druby://hfe01:42854
+2021-01-13 01:58:36 +0000 :: hfe01 :: Forcibly submitting gdasaodluts05
+2021-01-13 01:58:36 +0000 :: hfe01 :: Submission status of gdasaodluts05 is pending at druby://hfe01:42854
+2021-01-13 02:04:36 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts01 is success, jobid=15303401
+2021-01-13 02:04:36 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts02 is success, jobid=15303402
+2021-01-13 02:04:36 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts03 is success, jobid=15303403
+2021-01-13 02:04:36 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts04 is success, jobid=15303404
+2021-01-13 02:04:36 +0000 :: hfe01 :: Submission status of previously pending gdasaodluts05 is success, jobid=15303405
+2021-01-13 02:04:36 +0000 :: hfe01 :: Task gdasaodluts01, jobid=15303401, in state SUCCEEDED (COMPLETED), ran for 288.0 seconds, exit status=0, try=1 (of 2)
+2021-01-13 02:04:36 +0000 :: hfe01 :: Task gdasaodluts02, jobid=15303402, in state SUCCEEDED (COMPLETED), ran for 206.0 seconds, exit status=0, try=1 (of 2)
+2021-01-13 02:04:36 +0000 :: hfe01 :: Task gdasaodluts03, jobid=15303403, in state SUCCEEDED (COMPLETED), ran for 203.0 seconds, exit status=0, try=1 (of 2)
+2021-01-13 02:04:36 +0000 :: hfe01 :: Task gdasaodluts04, jobid=15303404, in state SUCCEEDED (COMPLETED), ran for 203.0 seconds, exit status=0, try=1 (of 2)
+2021-01-13 02:04:37 +0000 :: hfe01 :: Task gdasaodluts05, jobid=15303405, in state SUCCEEDED (COMPLETED), ran for 204.0 seconds, exit status=0, try=1 (of 2)
+2021-01-13 02:04:37 +0000 :: hfe01 :: Forcibly submitting enkfrecenter01
+2021-01-13 02:04:37 +0000 :: hfe01 :: Submission status of enkfrecenter01 is pending at druby://hfe01:39599
+2021-01-13 02:04:37 +0000 :: hfe01 :: Forcibly submitting enkfrecenter02
+2021-01-13 02:04:37 +0000 :: hfe01 :: Submission status of enkfrecenter02 is pending at druby://hfe01:39599
+2021-01-13 02:04:37 +0000 :: hfe01 :: Forcibly submitting enkfrecenter03
+2021-01-13 02:04:37 +0000 :: hfe01 :: Submission status of enkfrecenter03 is pending at druby://hfe01:39599
+2021-01-13 02:04:37 +0000 :: hfe01 :: Forcibly submitting enkfrecenter04
+2021-01-13 02:04:37 +0000 :: hfe01 :: Submission status of enkfrecenter04 is pending at druby://hfe01:39599
+2021-01-13 02:04:37 +0000 :: hfe01 :: Forcibly submitting enkfrecenter05
+2021-01-13 02:04:37 +0000 :: hfe01 :: Submission status of enkfrecenter05 is pending at druby://hfe01:39599
+2021-01-13 02:07:50 +0000 :: hfe01 :: Submission status of previously pending enkfrecenter01 is success, jobid=15303489
+2021-01-13 02:07:50 +0000 :: hfe01 :: Submission status of previously pending enkfrecenter02 is success, jobid=15303490
+2021-01-13 02:07:50 +0000 :: hfe01 :: Submission status of previously pending enkfrecenter03 is success, jobid=15303491
+2021-01-13 02:07:50 +0000 :: hfe01 :: Submission status of previously pending enkfrecenter04 is success, jobid=15303492
+2021-01-13 02:07:50 +0000 :: hfe01 :: Submission status of previously pending enkfrecenter05 is success, jobid=15303493
+2021-01-13 02:07:50 +0000 :: hfe01 :: Task enkfrecenter01, jobid=15303489, in state SUCCEEDED (COMPLETED), ran for 49.0 seconds, exit status=0, try=1 (of 2)
+2021-01-13 02:07:50 +0000 :: hfe01 :: Task enkfrecenter02, jobid=15303490, in state SUCCEEDED (COMPLETED), ran for 52.0 seconds, exit status=0, try=1 (of 2)
+2021-01-13 02:07:50 +0000 :: hfe01 :: Task enkfrecenter03, jobid=15303491, in state SUCCEEDED (COMPLETED), ran for 41.0 seconds, exit status=0, try=1 (of 2)
+2021-01-13 02:07:50 +0000 :: hfe01 :: Task enkfrecenter04, jobid=15303492, in state SUCCEEDED (COMPLETED), ran for 42.0 seconds, exit status=0, try=1 (of 2)
+2021-01-13 02:07:50 +0000 :: hfe01 :: Task enkfrecenter05, jobid=15303493, in state SUCCEEDED (COMPLETED), ran for 45.0 seconds, exit status=0, try=1 (of 2)
+2021-01-13 02:07:50 +0000 :: hfe01 :: Forcibly submitting gdasfcst
+2021-01-13 02:07:51 +0000 :: hfe01 :: Submission status of gdasfcst is pending at druby://hfe01:39858
+2021-01-13 02:09:19 +0000 :: hfe01 :: Submission status of previously pending gdasfcst is success, jobid=15303552
+2021-01-13 02:09:19 +0000 :: hfe01 :: Task gdasfcst, jobid=15303552, in state SUCCEEDED (COMPLETED), ran for 85.0 seconds, exit status=0, try=3 (of 2)
+2021-01-13 02:09:19 +0000 :: hfe01 :: Forcibly submitting gdasefcs01
+2021-01-13 02:09:19 +0000 :: hfe01 :: Submission status of gdasefcs01 is pending at druby://hfe01:33229
+2021-01-13 02:09:19 +0000 :: hfe01 :: Forcibly submitting gdasefcs02
+2021-01-13 02:09:19 +0000 :: hfe01 :: Submission status of gdasefcs02 is pending at druby://hfe01:33229
+2021-01-13 02:09:19 +0000 :: hfe01 :: Forcibly submitting gdasefcs03
+2021-01-13 02:09:19 +0000 :: hfe01 :: Submission status of gdasefcs03 is pending at druby://hfe01:33229
+2021-01-13 02:09:19 +0000 :: hfe01 :: Forcibly submitting gdasefcs04
+2021-01-13 02:09:19 +0000 :: hfe01 :: Submission status of gdasefcs04 is pending at druby://hfe01:33229
+2021-01-13 02:09:19 +0000 :: hfe01 :: Forcibly submitting gdasefcs05
+2021-01-13 02:09:19 +0000 :: hfe01 :: Submission status of gdasefcs05 is pending at druby://hfe01:33229
+2021-01-13 02:17:22 +0000 :: hfe01 :: Submission status of previously pending gdasefcs01 is success, jobid=15303559
+2021-01-13 02:17:22 +0000 :: hfe01 :: Submission status of previously pending gdasefcs02 is success, jobid=15303560
+2021-01-13 02:17:22 +0000 :: hfe01 :: Submission status of previously pending gdasefcs03 is success, jobid=15303561
+2021-01-13 02:17:22 +0000 :: hfe01 :: Submission status of previously pending gdasefcs04 is success, jobid=15303562
+2021-01-13 02:17:22 +0000 :: hfe01 :: Submission status of previously pending gdasefcs05 is success, jobid=15303563
+2021-01-13 02:17:22 +0000 :: hfe01 :: Task gdasefcs01, jobid=15303559, in state SUCCEEDED (COMPLETED), ran for 408.0 seconds, exit status=0, try=5 (of 2)
+2021-01-13 02:17:22 +0000 :: hfe01 :: Task gdasefcs02, jobid=15303560, in state SUCCEEDED (COMPLETED), ran for 401.0 seconds, exit status=0, try=5 (of 2)
+2021-01-13 02:17:22 +0000 :: hfe01 :: Task gdasefcs03, jobid=15303561, in state SUCCEEDED (COMPLETED), ran for 400.0 seconds, exit status=0, try=3 (of 2)
+2021-01-13 02:17:22 +0000 :: hfe01 :: Task gdasefcs04, jobid=15303562, in state SUCCEEDED (COMPLETED), ran for 399.0 seconds, exit status=0, try=3 (of 2)
+2021-01-13 02:17:22 +0000 :: hfe01 :: Task gdasefcs05, jobid=15303563, in state SUCCEEDED (COMPLETED), ran for 407.0 seconds, exit status=0, try=3 (of 2)
+2021-01-13 02:17:22 +0000 :: hfe01 :: Forcibly submitting gdasemean
+2021-01-13 02:17:22 +0000 :: hfe01 :: Submission status of gdasemean is pending at druby://hfe01:39987
+2021-01-13 02:19:00 +0000 :: hfe01 :: Submission status of previously pending gdasemean is success, jobid=15303806
+2021-01-13 02:19:00 +0000 :: hfe01 :: Task gdasemean, jobid=15303806, in state FAILED (CANCELLED), ran for 0.0 seconds, exit status=255, try=1 (of 2)
+2021-01-13 02:19:01 +0000 :: hfe01 :: Forcibly submitting gdasemean
+2021-01-13 02:19:01 +0000 :: hfe01 :: Submission status of gdasemean is pending at druby://hfe01:34974
+2021-01-19 18:18:52 +0000 :: hfe12 :: Submission status of gdasemean for cycle 201605090000 could not be retrieved because the server process at druby://hfe01:34974 died
+2021-01-19 18:18:52 +0000 :: hfe12 :: Submission of gdasemean for cycle 201605090000 probably, but not necessarily, failed.  It will be resubmitted
+2021-01-19 18:18:52 +0000 :: hfe12 :: Forcibly submitting cleandata
+2021-01-19 18:18:52 +0000 :: hfe12 :: Submission status of cleandata is pending at druby://hfe12:46274
+2021-01-19 18:21:34 +0000 :: hfe12 :: Submission status of previously pending cleandata is success, jobid=15483077
+2021-01-19 18:21:34 +0000 :: hfe12 :: Task cleandata, jobid=15483077, in state SUCCEEDED (COMPLETED), ran for 8.0 seconds, exit status=0, try=1 (of 2)
