@@ -64,7 +64,7 @@ export NLN=${NLN:-"/bin/ln -sf"}
 export CHGRP_CMD=${CHGRP_CMD:-"chgrp ${group_name:-rstprod}"}
 export NCLEN=${NCLEN:-$HOMEgfs/ush/getncdimlen}
 export CATEXEC=${CATEXEC:-$HOMEgsi/exec/nc_diag_cat_serial.x}
-export VARSREPLACEEXEC=${VARSREPLACEEXEC:-$HOMEgsi/exec/replace_vars.x}
+export VARSREPLACEEXEC=${VARSREPLACEEXEC:-$HOMEgsi/exec/replace_vars_mpi.x}
 export ERRSCRIPT=${ERRSCRIPT:-'eval [[ $err = 0 ]]'}
 COMPRESS=${COMPRESS:-gzip}
 UNCOMPRESS=${UNCOMPRESS:-gunzip}
@@ -109,6 +109,7 @@ source /apps/lmod/7.7.18/init/ksh
 . ${HOMEjedi}/jedi_module_base.hera
 module load nco ncview ncl
 module list
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${HOMEjedi}/lib/"
 
 echo $LD_LIBRARY_PATH
 
