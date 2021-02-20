@@ -73,7 +73,7 @@ export ERRSCRIPT=${ERRSCRIPT:-'eval [[ $err = 0 ]]'}
 # other variables
 ntiles=${ntiles:-6}
 
-export DATA=${DATA}/grp${ENSGRP}
+export DATA=${DATA}
 
 mkdir -p $DATA && cd $DATA/
 
@@ -97,12 +97,17 @@ cat << EOF > recenter_aeros_mpi.nl
 &recenter_aeros_mpi_nml
  nens = ${NMEM_AERO}
  dircntl = "${cntldir}"
- dirensm = "${ensmdir}"
+ dirmem = "${ensmdir}"
  filecntl = "${tracer_cntl_prefix}.tile?.nc"
  filemem = "${tracer_mem_prefix}.tile?.nc"
  varnames =  "sulf","bc1","bc2","oc1","oc2","dust1","dust2","dust3","dust4","dust5","seas1","seas2","seas3","seas4","seas5"
 / 
 EOF
+
+. ${HOMEjedi}/jedi_module_base.hera
+module load nco ncview ncl
+module list
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${HOMEjedi}/lib/"
 
 	mpirun -np ${NMEM_AERO} ${RECENTEREXEC}
 
