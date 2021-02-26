@@ -294,8 +294,8 @@ geometry:
   nml_file_mpp: fmsmpp.nml
   trc_file: field_table.input
   akbk: ./input/akbk.nc
-  layout: [1,1]
-  io_layout: [1,1]
+  layout: [${layout_eupd}]
+  io_layout: [${io_layout_eupd}]
   npx: ${resx}
   npy: ${resy}
   npz: 64

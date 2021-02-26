@@ -178,8 +178,8 @@ geometry:
   nml_file_mpp: ./fmsmpp.nml
   trc_file: ./field_table.input
   akbk: akbk.nc
-  layout: [1,1]
-  io_layout: [1,1]
+  layout: [${layout_hofx}]
+  io_layout: [${io_layout_hofx}]
   npx: ${resx}
   npy: ${resy}
   npz: 64
@@ -205,7 +205,7 @@ prints:
   frequency: PT3H
 EOF
 
-srun --export=all -n 6 ./fv3jedi_hofx_nomodel.x "./hofx_nomodel_AOD_LUTs.yaml" "./hofx_nomodel_AOD_LUTs.run"
+srun --export=all -n ${ncore_hofx} ./fv3jedi_hofx_nomodel.x "./hofx_nomodel_AOD_LUTs.yaml" "./hofx_nomodel_AOD_LUTs.run"
 err=$?
 
 if [ $err -eq 0 ]; then

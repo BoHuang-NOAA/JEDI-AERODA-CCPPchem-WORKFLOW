@@ -15,8 +15,8 @@
 
 	<!-- Experiment parameters such as name, starting, ending dates -->
 	<!ENTITY PSLOT "test-workflow-CCPP2-chem">
-	<!ENTITY SDATE "201606120600">
-	<!ENTITY EDATE "201606120600">
+	<!ENTITY SDATE "201605091200">
+	<!ENTITY EDATE "201605091800">
 	<!ENTITY AODTYPE "MODIS">
 
 	<!-- Run Envrionment -->
@@ -41,8 +41,8 @@
 	<!-- Directories for driving the workflow -->
 	<!ENTITY HOMEjedi "/scratch1/BMC/gsd-fv3-dev/MAPP_2018/bhuang/JEDI-2020/JEDI-FV3/expCodes/fv3-bundle/V20201202/build/">
 	<!--ENTITY HOMEjedi "/scratch1/NCEPDEV/da/Cory.R.Martin/JEDI/fv3-bundle/buildscripts/build-intel-19.0.5.281-release-default"-->
-	<!--ENTITY HOMEgfs  "/scratch1/BMC/gsd-fv3-dev/MAPP_2018/bhuang/JEDI-2020/JEDI-FV3/expCodes/GSDChem_cycling/global-workflow/"-->
-	<!ENTITY HOMEgfs  "/scratch1/BMC/gsd-fv3-dev/MAPP_2018/bhuang/JEDI-2020/JEDI-FV3/expCodes/GSDChem_cycling/global-workflow-CCPP2-Chem-clean">
+	<!--ENTITY HOMEgfs  "/scratch1/BMC/gsd-fv3-dev/MAPP_2018/bhuang/JEDI-2020/JEDI-FV3/expCodes/GSDChem_cycling/global-workflow-CCPP2-Chem-clean"-->
+	<!ENTITY HOMEgfs  "/home/Bo.Huang/JEDI-2020/GSDChem_cycling/global-workflow-CCPP2-Chem-clean">
 	<!ENTITY JOBS_DIR "&HOMEgfs;/jobs/rocoto">
 	<!ENTITY DMPDIR   "/scratch1/NCEPDEV/global/glopara/dump">
 
@@ -51,7 +51,7 @@
 
 	<!-- Machine related entities -->
 	<!ENTITY ACCOUNT    "wrf-chem">
-	<!ENTITY QUEUE      "batch">
+	<!ENTITY QUEUE      "debug">
 	<!ENTITY QUEUE_ARCH "service">
 	<!ENTITY PARTITION_ARCH "service">
 	<!ENTITY SCHEDULER  "slurm">
@@ -84,6 +84,10 @@
 	<!ENTITY RESOURCES_HXAOD_GDAS "<nodes>1:ppn=24:tpp=1</nodes>">
 	<!ENTITY NATIVE_HXAOD_GDAS    "--export=NONE">
 
+	<!ENTITY QUEUE_RECENTER_GDAS     "&QUEUE;">
+	<!ENTITY WALLTIME_RECENTER_GDAS  "00:29:00">
+	<!ENTITY RESOURCES_RECENTER_GDAS "<nodes>1:ppn=24:tpp=1</nodes>">
+	<!ENTITY NATIVE_RECENTER_GDAS    "--export=NONE">
 
 	<!ENTITY QUEUE_CALCINC_GDAS     "&QUEUE;">
 	<!--ENTITY WALLTIME_CALCINC_GDAS  "00:30:00"-->
@@ -125,6 +129,7 @@
 	<cycledef group="gdas" >&SDATE;     &EDATE;     06:00:00</cycledef>
 	<cycledef group="ens" >&SDATE;     &EDATE;     06:00:00</cycledef>
 
+<!--	
 <task name="gdasprepmet" cycledefs="gdas" maxtries="&MAXTRIES;">
 
 	<command>&JOBS_DIR;/prepmet.sh</command>
@@ -163,7 +168,9 @@
 	</dependency>
 
 </task>
+-->
 
+<!--
 <metatask name="gdasensprepmet">
 
 	<var name="grp">01 02 03 04 05</var>
@@ -209,6 +216,7 @@
 	</task>
 
 </metatask>
+-->
 
 <task name="gdasprepchem" cycledefs="gdas" maxtries="&MAXTRIES;">
 
@@ -457,46 +465,40 @@
 </metatask>
 
 
-<metatask name="enkfrecenter">
+<task name="enkfrecenter" cycledefs="ens" maxtries="&MAXTRIES;">
 
-	<var name="grp">01 02 03 04 05</var>
+	<command>&JOBS_DIR;/enkfAna_recenter_mpi.sh</command>
 
-	<task name="enkfrecenter#grp#" cycledefs="ens" maxtries="&MAXTRIES;">
+	<jobname><cyclestr>&PSLOT;_enkfrecenter_@H</cyclestr></jobname>
+	<account>&ACCOUNT;</account>
+	<queue>&QUEUE_RECENTER_GDAS;</queue>
+	&RESOURCES_RECENTER_GDAS;
+	<walltime>&WALLTIME_RECENTER_GDAS;</walltime>
 
-		<command>&JOBS_DIR;/enkfAna_recenter.sh</command>
+	<native>&NATIVE_RECENTER_GDAS;</native>
 
-		<jobname><cyclestr>&PSLOT;_enkfrecenter#grp#_@H</cyclestr></jobname>
-		<account>&ACCOUNT;</account>
-		<queue>&QUEUE_HXAOD_GDAS;</queue>
-		&RESOURCES_HXAOD_GDAS;
-		<walltime>&WALLTIME_HXAOD_GDAS;</walltime>
-	
-		<native>&NATIVE_HXAOD_GDAS;</native>
+	<join><cyclestr>&ROTDIR;/logs/@Y@m@d@H/enkfrecenter.log</cyclestr></join>
 
-		<join><cyclestr>&ROTDIR;/logs/@Y@m@d@H/enkfrecenter#grp#.log</cyclestr></join>
-
-		<envar><name>SLURM_SET</name><value>YES</value></envar>
-		<envar><name>PSLOT</name><value>&PSLOT;</value></envar>
-		<envar><name>RUN_ENVIR</name><value>&RUN_ENVIR;</value></envar>
-		<envar><name>TOPOBSDIR</name><value>&TOPOBSDIR;</value></envar>
-		<envar><name>HOMEgfs</name><value>&HOMEgfs;</value></envar>
-		<envar><name>HOMEjedi</name><value>&HOMEjedi;</value></envar>
-		<envar><name>EXPDIR</name><value>&EXPDIR;</value></envar>
-		<envar><name>ROTDIR</name><value>&ROTDIR;</value></envar>
-		<envar><name>CDATE</name><value><cyclestr>@Y@m@d@H</cyclestr></value></envar>
-		<envar><name>CDUMP</name><value>gdas</value></envar>
-		<envar><name>RUN_ENVIR</name><value>&RUN_ENVIR;</value></envar>
-		<envar><name>machine</name><value>&machine;</value></envar>
-		<envar><name>HPSS_PROJECT</name><value>&HPSS_PROJECT;</value></envar>
-		<envar><name>PDY</name><value><cyclestr>@Y@m@d</cyclestr></value></envar>
-		<envar><name>cyc</name><value><cyclestr>@H</cyclestr></value></envar>
-		<envar><name>ENSGRP</name><value>#grp#</value></envar>
-	        <envar><name>AODTYPE</name><value>&AODTYPE;</value></envar>
-		<dependency>
-			<metataskdep metatask="gdasaodluts"/>
-		</dependency>
-	</task>	
-</metatask>
+	<envar><name>SLURM_SET</name><value>YES</value></envar>
+	<envar><name>PSLOT</name><value>&PSLOT;</value></envar>
+	<envar><name>RUN_ENVIR</name><value>&RUN_ENVIR;</value></envar>
+	<envar><name>TOPOBSDIR</name><value>&TOPOBSDIR;</value></envar>
+	<envar><name>HOMEgfs</name><value>&HOMEgfs;</value></envar>
+	<envar><name>HOMEjedi</name><value>&HOMEjedi;</value></envar>
+	<envar><name>EXPDIR</name><value>&EXPDIR;</value></envar>
+	<envar><name>ROTDIR</name><value>&ROTDIR;</value></envar>
+	<envar><name>CDATE</name><value><cyclestr>@Y@m@d@H</cyclestr></value></envar>
+	<envar><name>CDUMP</name><value>gdas</value></envar>
+	<envar><name>RUN_ENVIR</name><value>&RUN_ENVIR;</value></envar>
+	<envar><name>machine</name><value>&machine;</value></envar>
+	<envar><name>HPSS_PROJECT</name><value>&HPSS_PROJECT;</value></envar>
+	<envar><name>PDY</name><value><cyclestr>@Y@m@d</cyclestr></value></envar>
+	<envar><name>cyc</name><value><cyclestr>@H</cyclestr></value></envar>
+        <envar><name>AODTYPE</name><value>&AODTYPE;</value></envar>
+	<dependency>
+		<metataskdep metatask="gdasaodluts"/>
+	</dependency>
+</task>	
 
 <task name="gdasfcst" cycledefs="gdas" maxtries="&MAXTRIES;">
 
@@ -530,8 +532,8 @@
 	<dependency>
 		<and>
 			<taskdep task="gdasprepchem"/>
+			<taskdep task="enkfrecenter"/>
 			<metataskdep metatask="gdasenscalcinc"/>
-			<metataskdep metatask="enkfrecenter"/>
 		</and>
 	</dependency>
 </task>
@@ -573,8 +575,8 @@
 		<dependency>
 			<and>
 				<taskdep task="gdasprepchem"/>
+				<taskdep task="enkfrecenter"/>
 				<metataskdep metatask="gdasenscalcinc"/>
-				<metataskdep metatask="enkfrecenter"/>
 			</and>
 		</dependency>
 

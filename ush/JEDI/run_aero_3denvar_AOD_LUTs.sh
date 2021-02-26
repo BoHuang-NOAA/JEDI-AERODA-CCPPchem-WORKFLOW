@@ -369,38 +369,6 @@ ${yamlblock_mem}
           verbosity: main
           io_keys: ["common"]
           io_values: ["fixed_2500km_0.581"]
-#          io_keys:
-#          - "sulf-sulf"
-#          - "bc1-bc1"
-#          - "bc2-bc2"
-#          - "oc1-oc1"
-#          - "oc2-oc2"
-#          - "dust1-dust1"
-#          - "dust2-dust2"
-#          - "dust3-dust3"
-#          - "dust4-dust4"
-#          - "dust5-dust5"
-#          - "seas1-seas1"
-#          - "seas2-seas2"
-#          - "seas3-seas3"
-#          - "seas4-seas4"
-#          - "seas5-seas5"
-#          io_values:
-#          - "fixed_2500km_0.581"
-#          - "fixed_2500km_0.581"
-#          - "fixed_2500km_0.581"
-#          - "fixed_2500km_0.581"
-#          - "fixed_2500km_0.581"
-#          - "fixed_2500km_0.581"
-#          - "fixed_2500km_0.581"
-#          - "fixed_2500km_0.581"
-#          - "fixed_2500km_0.581"
-#          - "fixed_2500km_0.581"
-#          - "fixed_2500km_0.581"
-#          - "fixed_2500km_0.581"
-#          - "fixed_2500km_0.581"
-#          - "fixed_2500km_0.581"
-#          - "fixed_2500km_0.581"
   observations:
 ${yamlblock_obs}
   cost type: 3D-Var
@@ -411,8 +379,8 @@ ${yamlblock_obs}
     nml_file_mpp: fmsmpp.nml
     trc_file: field_table.input
     akbk: ./input/akbk.nc
-    layout: [1,1]
-    io_layout: [1,1]
+    layout: [${layout_anal}]
+    io_layout: [${io_layout_anal}]
     npx: ${resx}
     npy: ${resy}
     npz: 64
@@ -442,8 +410,8 @@ variational:
     geometry:
       trc_file: field_table.input
       akbk: ./input/akbk.nc
-      layout: [1,1]
-      io_layout: [1,1]
+      layout: [${layout_anal}]
+      io_layout: [${io_layout_anal}]
       npx: ${resx}
       npy: ${resy}
       npz: 64

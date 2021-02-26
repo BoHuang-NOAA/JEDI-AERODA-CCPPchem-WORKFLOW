@@ -113,7 +113,7 @@ export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${HOMEjedi}/lib/"
 
 echo $LD_LIBRARY_PATH
 
-srun --export=all -n6 ./fv3jedi_letkf.x jedigetkf_gfs_aero.yaml jedigetif_gfs-aero.run
+srun --export=all -n ${ncore_eupd} ./fv3jedi_letkf.x jedigetkf_gfs_aero.yaml jedigetif_gfs-aero.run
 err=$?
 
 if [ ${err} -ne 0 ]; then
