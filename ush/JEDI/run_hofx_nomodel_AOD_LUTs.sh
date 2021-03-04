@@ -53,7 +53,7 @@ ${nln} ${FV3Dir}/akbk64.nc4          ./akbk.nc
 # Link NASA look-up tables
 ${nln} ${JEDIDir}/geos-aero/test/testinput/geosaod.rc ./geosaod.rc
 ${nln} ${JEDIDir}/geos-aero/test/testinput/Chem_MieRegistry.rc ./Chem_Registry.rc
-${nln} ${JEDIDir}/geos-aero/test/Data/*.nc ./
+${nln} ${JEDIDir}/geos-aero/test/Data ./
 
 # Link observation files
 obsstr=${CDATE}
@@ -61,19 +61,19 @@ if [ $AODTYPE = "VIIRS" ]; then
     obsfile=${ObsDir}/viirs_aod_snpp.${obsstr}.nc
     obsin=aod_viirs_obs_${obsstr}.nc4
     obsout=aod_viirs_hofx_3dvar_LUTs_${obsstr}.nc4
-    obsoutproc=aod_viirs_hofx_3dvar_LUTs_${obsstr}_000
+    obsoutproc=aod_viirs_hofx_3dvar_LUTs_${obsstr}
     ${nln} ${obsfile} ${obsin}
 elif [ $AODTYPE = "MODIS" ]; then
     obsfile=${ObsDir}/nnr_terra.${obsstr}.nc
     obsin=aod_nnr_terra_obs_${obsstr}.nc4
     obsout=aod_nnr_terra_hofx_3dvar_LUTs_${obsstr}.nc4
-    obsoutproc=aod_nnr_terra_hofx_3dvar_LUTs_${obsstr}_000
+    obsoutproc=aod_nnr_terra_hofx_3dvar_LUTs_${obsstr}
     ${nln} ${obsfile} ${obsin}
 
     obsfile1=${ObsDir}/nnr_aqua.${obsstr}.nc
     obsin1=aod_nnr_aqua_obs_${obsstr}.nc4
     obsout1=aod_nnr_aqua_hofx_3dvar_LUTs_${obsstr}.nc4
-    obsoutproc1=aod_nnr_aqua_hofx_3dvar_LUTs_${obsstr}_000
+    obsoutproc1=aod_nnr_aqua_hofx_3dvar_LUTs_${obsstr}
     ${nln} ${obsfile1} ${obsin1}
 else
     echo "AODTYBE must be VIIRS or MODIS; exit this program now!"
@@ -208,11 +208,26 @@ EOF
 srun --export=all -n ${ncore_hofx} ./fv3jedi_hofx_nomodel.x "./hofx_nomodel_AOD_LUTs.yaml" "./hofx_nomodel_AOD_LUTs.run"
 err=$?
 
+nprocs=$((ncore_hofx-1))
 if [ $err -eq 0 ]; then
     if [ $AODTYPE = "VIIRS" ]; then
         iproc=0
-        while [ ${iproc} -le 5 ]; do
-           ${nmv} ./${obsoutproc}${iproc}.nc4  ${hofxdir}/${obsoutproc}${iproc}.nc4${trcr_suffix}     		  
+
+        while [ ${iproc} -le ${nprocs} ]; do
+
+	   if [ ${iproc} -lt 10 ]; then
+	       iprocstr=000${iproc}
+	   elif [ ${iproc} -lt 100 ]; then
+	       iprocstr=00${iproc}
+           elif [ ${iproc} -lt 1000 ]; then
+	       iprocstr=0${iproc}
+	   else
+	       echo "Too many cores for hofx calculation (less than 1000) and exit! "
+	       exit 1
+	   fi
+
+           ${nmv} ./${obsoutproc}_${iprocstr}.nc4  ${hofxdir}/${obsoutproc}_${iprocstr}.nc4${trcr_suffix}     		  
+
 	   ((iproc=iproc+1))
 	done
     elif [ $AODTYPE = "MODIS" ]; then
@@ -220,9 +235,21 @@ if [ $err -eq 0 ]; then
         obsout1=./aod_nnr_aqua_hofx_3dvar_LUTs_${obsstr}.nc4
 
         iproc=0
-        while [ ${iproc} -le 5 ]; do
-           ${nmv} ./${obsoutproc}${iproc}.nc4  ${hofxdir}/${obsoutproc}${iproc}.nc4${trcr_suffix}     		  
-           ${nmv} ./${obsoutproc1}${iproc}.nc4  ${hofxdir}/${obsoutproc1}${iproc}.nc4${trcr_suffix}     		  
+        while [ ${iproc} -le ${nprocs} ]; do
+	   if [ ${iproc} -lt 10 ]; then
+	       iprocstr=000${iproc}
+	   elif [ ${iproc} -lt 100 ]; then
+	       iprocstr=00${iproc}
+           elif [ ${iproc} -lt 1000 ]; then
+	       iprocstr=0${iproc}
+	   else
+	       echo "Too many cores for hofx calculation (less than 1000) and exit! "
+	       exit 1
+	   fi
+
+           ${nmv} ./${obsoutproc}_${iprocstr}.nc4  ${hofxdir}/${obsoutproc}_${iprocstr}.nc4${trcr_suffix}     		  
+           ${nmv} ./${obsoutproc1}_${iprocstr}.nc4  ${hofxdir}/${obsoutproc1}_${iprocstr}.nc4${trcr_suffix}     		  
+
 	   ((iproc=iproc+1))
 	done
     fi

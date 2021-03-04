@@ -16,8 +16,7 @@ res=`echo "$res1" | tr '[:upper:]' '[:lower:]'`
 resc=$(echo $res1 |cut -c2-5)
 resx=$((resc+1))
 resy=$((resc+1))
-bumplayout=`echo ${layout_anal} | sed 's/,/-/g'`
-BumpDir=${BumpDir:-${JEDIDir}/fv3-jedi/test/Data/bump/${CASE}/layout-${bumplayout}/}
+BumpDir=${JEDIDir}/fv3-jedi/test/Data/bump/${CASE}/
 FieldDir=${JEDIDir}/fv3-jedi/test/Data/fieldsets/
 FV3Dir=${JEDIDir}/fv3-jedi/test/Data/fv3files/
 CRTMFix=${HOMEgfs}/fix/jedi_crtm_fix_20200413/CRTM_fix/Little_Endian/
@@ -122,11 +121,13 @@ ${nln} ${JEDIDir}/geos-aero/test/Data ${WorkDir}/
 
 # Link observations (only for VIIRS or MODIS)
 obsstr=${validtime}
+analroot=${RotDir}/gdas.${vyy}${vmm}${vdd}/${vhh}/
+mkdir -p ${analroot}/obs/
 if [ $AODTYPE = "VIIRS" ]; then
     obsfile=${ObsDir}/viirs_aod_snpp.${obsstr}.nc
     obsin=aod_viirs_obs_${obsstr}.nc4
     ${nln} ${obsfile} ${workinput}/${obsin}
-    #obsout=aod_viirs_hofx_3dvar_LUTs_${obsstr}.nc4
+    obsout=${analroot}/obs/aod_viirs_hofx_3dvar_LUTs_${obsstr}.nc4
 elif [ $AODTYPE = "MODIS" ]; then
     obsfile=${ObsDir}/nnr_terra.${obsstr}.nc
     obsfile1=${ObsDir}/nnr_aqua.${obsstr}.nc
@@ -134,8 +135,8 @@ elif [ $AODTYPE = "MODIS" ]; then
     obsin1=aod_nnr_aqua_obs_${obsstr}.nc4
     ${nln} ${obsfile} ${workinput}/${obsin}
     ${nln} ${obsfile1} ${workinput}/${obsin1}
-    #obsout=aod_nnr_terra_hofx_3dvar_LUTs_${obsstr}.nc4
-    #obsout1=aod_nnr_aqua_hofx_3dvar_LUTs_${obsstr}.nc4
+    obsout=${analroot}/obs/aod_nnr_terra_hofx_3dvar_LUTs_${obsstr}.nc4
+    obsout1=${analroot}/obs/aod_nnr_aqua_hofx_3dvar_LUTs_${obsstr}.nc4
 else
     echo "AODTYBE must be VIIRS or MODIS; exit this program now!"
     exit 1
@@ -240,17 +241,17 @@ ${nln} ${jediexe} ${WorkDir}/fv3jedi_var.x
 # generate yaml block for background ensembles 
 imem=1
 rm -rf ${WorkDir}/yamlblock_mem.info
-filetype="        - filetype: gfs"
-filetrcr="          filename_trcr: fv_tracer.res.nc"
-filecplr="          filename_cplr: coupler.res"
-filevars="          state variables: *aerovars"
-filevars1="          state variables: &aerovars [sulf,bc1,bc2,oc1,oc2,
-                                                 dust1,dust2,dust3,dust4,dust5,
-                                                 seas1,seas2,seas3,seas4,seas5]"
+filetype="      - filetype: gfs"
+filetrcr="        filename_trcr: fv_tracer.res.nc"
+filecplr="        filename_cplr: coupler.res"
+filevars="        state variables: *aerovars"
+filevars1="        state variables: &aerovars [sulf,bc1,bc2,oc1,oc2,
+                                    dust1,dust2,dust3,dust4,dust5,
+                                    seas1,seas2,seas3,seas4,seas5]"
 
 while [ ${imem} -le ${nmem} ]; do
    memstr="mem`printf %03d ${imem}`"
-   filemem="          datapath: ./input/${memstr}/"
+   filemem="        datapath: ./input/${memstr}/"
    echo "${filetype}" >> ${WorkDir}/yamlblock_mem.info
    if [ ${imem} -eq 1 ];then
       echo "${filevars1}" >> ${WorkDir}/yamlblock_mem.info
@@ -293,8 +294,8 @@ yamlblock_obs="  - obs space:
       name: Aod
       obsdatain:
         obsfile: ./input/${obsin}
-      #obsdataout:
-      #  obsfile: ${obsout}
+      obsdataout:
+        obsfile: ${obsout}
       simulated variables: [aerosol_optical_depth]
       channels: 4
     obs operator:
@@ -312,8 +313,8 @@ yamlblock_obs="  - obs space:
       name: Aod
       obsdatain:
         obsfile: ./input/${obsin1}
-      #obsdataout:
-      #  obsfile: ${obsout1}
+      obsdataout:
+        obsfile: ${obsout1}
       simulated variables: [aerosol_optical_depth]
       channels: 4
     obs operator:
@@ -348,30 +349,28 @@ cost function:
                       seas1,seas2,seas3,seas4,seas5]
   background error:
     covariance model: hybrid
-    components:
-    - covariance:
-        covariance model: ID
-        date: '${datestr}'
-      weight: 
-        value: 0.01
-    - covariance:
-        covariance model: ensemble
-        members:
+    static weight: 0.01
+    ensemble weight: 0.99
+    static:
+      date: '${datestr}'
+      covariance model: ID
+    ensemble:
+      date: '${datestr}'
+      members:
 ${yamlblock_mem}
-        localization:
-          localization variables: *aerovars
-          localization method: BUMP
-          bump:
-            prefix: ./bump/fv3jedi_bumpparameters_nicas_gfs
-            method: loc
-            strategy: common
-            load_nicas: 1
-            mpicom: 2
-            verbosity: main
-            io_keys: ["common"]
-            io_values: ["fixed_2500km_0.581"]
-      weight:
-        value: 0.99
+      localization:
+        timeslots: ['${locdatestr}']
+        localization variables: *aerovars
+        localization method: BUMP
+        bump:
+          prefix: ./bump/fv3jedi_bumpparameters_nicas_gfs
+          method: loc
+          strategy: common
+          load_nicas: 1
+          mpicom: 2
+          verbosity: main
+          io_keys: ["common"]
+          io_values: ["fixed_2500km_0.581"]
   observations:
 ${yamlblock_obs}
   cost type: 3D-Var

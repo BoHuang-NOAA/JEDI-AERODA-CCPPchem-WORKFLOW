@@ -114,7 +114,7 @@ done
 # Link NASA look-up tables
 ${nln} ${JEDIDir}/geos-aero/test/testinput/geosaod.rc ${WorkDir}/geosaod.rc
 ${nln} ${JEDIDir}/geos-aero/test/testinput/Chem_MieRegistry.rc ${WorkDir}/Chem_Registry.rc
-${nln} ${JEDIDir}/geos-aero/test/Data/*.nc ${WorkDir}/
+${nln} ${JEDIDir}/geos-aero/test/Data ${WorkDir}/
 
 # link observations
 obsstr=${validtime}
