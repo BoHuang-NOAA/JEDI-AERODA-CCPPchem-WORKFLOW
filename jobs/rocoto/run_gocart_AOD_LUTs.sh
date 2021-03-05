@@ -199,8 +199,6 @@ for ifield in ${allfields}; do
        $JEDIUSH/run_hofx_nomodel_AOD_LUTs.sh
        err1=$?
 
-#HBO
-exit  
        echo "Running run_AOD_LUTs_fv3grid.sh"
        $JEDIUSH/run_AOD_LUTs_fv3grid.sh
        err2=$?
