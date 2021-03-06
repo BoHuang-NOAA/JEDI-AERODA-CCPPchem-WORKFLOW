@@ -83,6 +83,7 @@ LEVS=${LEVS:-65}
 NCP=${NCP:-"/bin/cp -p"}
 NLN=${NLN:-"/bin/ln -sf"}
 NMV=${NMV:-"/bin/mv"}
+NRM=${NRM:-"/bin/rm"}
 SEND=${SEND:-"YES"}   #move final result to rotating directory
 ERRSCRIPT=${ERRSCRIPT:-'eval [[ $err = 0 ]]'}
 KEEPDATA=${KEEPDATA:-"NO"}

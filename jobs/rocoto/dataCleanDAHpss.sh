@@ -91,9 +91,9 @@ if [ -s \${cntlGDAS} ]; then
 ### Backup cntl data
     cntlBakup=\${bakupDir}/gdas.\${cycYMD}/\${cycH}/
     mkdir -p \${cntlBakup}
+    /bin/cp \${cntlGDAS}/obs/* \${cntlBakup}/
     /bin/cp \${cntlGDAS}/RESTART/*.fv_aod_* \${cntlBakup}/
     #/bin/cp \${cntlGDAS}/RESTART/*.fv_core.* \${cntlBakup}/
-    /bin/cp \${cntlGDAS}/obs/* \${cntlBakup}/
     /bin/cp \${cntlGDAS}/RESTART/\${cyc1prefix}.fv_tracer.* \${cntlBakup}/
     /bin/cp \${cntlGDAS}/RESTART/\${cyc1prefix}.fv_core.* \${cntlBakup}/
 
@@ -114,9 +114,9 @@ if [ -s \${cntlGDAS} ]; then
     enkfBakup_Mean=\${bakupDir}/enkfgdas.\${cycYMD}/\${cycH}/ensmean
 
     mkdir -p \${enkfBakup_Mean}
+    /bin/cp \${enkfGDAS_Mean}/obs/* \${enkfBakup_Mean}/
     /bin/cp \${enkfGDAS_Mean}/RESTART/*.fv_aod_* \${enkfBakup_Mean}/
     #/bin/cp \${enkfGDAS_Mean}/RESTART/*.fv_core.* \${enkfBakup_Mean}/
-    /bin/cp \${enkfGDAS_Mean}/obs/* \${enkfBakup_Mean}/
     /bin/cp \${enkfGDAS_Mean}/RESTART/\${cyc1prefix}.fv_tracer.* \${enkfBakup_Mean}/
     /bin/cp \${enkfGDAS_Mean}/RESTART/\${cyc1prefix}.fv_core.* \${enkfBakup_Mean}/
 
@@ -134,8 +134,8 @@ if [ -s \${cntlGDAS} ]; then
 
        ### back mem data
        mkdir -p \${enkfBakup_Mem}
-       /bin/cp \${enkfGDAS_Mem}/RESTART/*.fv_aod_* \${enkfBakup_Mem}
        /bin/cp \${enkfGDAS_Mem}/obs/* \${enkfBakup_Mem}
+       /bin/cp \${enkfGDAS_Mem}/RESTART/*.fv_aod_* \${enkfBakup_Mem}
        #/bin/cp \${enkfGDAS_Mem}/RESTART/*.fv_tracer.* \${enkfBakup_Mem}
 
        ianal=\$[\$ianal+1]
