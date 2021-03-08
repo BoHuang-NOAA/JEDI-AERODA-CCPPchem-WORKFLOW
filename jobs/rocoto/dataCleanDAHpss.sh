@@ -85,7 +85,8 @@ if [ -s \${cntlGDAS} ]; then
 ### Clean unnecessary cntl files
     #/bin/rm -rf \${cntlGDAS}/gdas.t??z.atmf???.nc
     #/bin/rm -rf \${cntlGDAS}/gdas.t??z.sfcf???.nc
-    /bin/rm -rf \${cntlGDAS}/gdas.t??z.logf???.txt
+    /bin/rm -rf \${cntlGDAS}/gdas.t??z.logf???.txt.ges
+    /bin/rm -rf \${cntlGDAS}/INPUT
     #/bin/rm -rf \${cntlGDAS}/fireemi
 
 ### Backup cntl data
@@ -130,7 +131,7 @@ if [ -s \${cntlGDAS} ]; then
        ### clean uncessary mem files
        #/bin/rm -r \${enkfGDAS_Mem}/gdas.t??z.atmf???.nc
        #/bin/rm -r \${enkfGDAS_Mem}/gdas.t??z.sfcf???.nc
-       /bin/rm -r \${enkfGDAS_Mem}/gdas.t??z.logf???.txt
+       /bin/rm -r \${enkfGDAS_Mem}/gdas.t??z.logf???.txt.ges
 
        ### back mem data
        mkdir -p \${enkfBakup_Mem}

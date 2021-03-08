@@ -153,11 +153,12 @@ if [ ! -d $DATA ]; then
 fi
 
 # Stage the FV3 initial conditions to ROTDIR  
-export OUTDIR="$ICSDIR/$CDATE/$CDUMP/$CASE/INPUT" #lzhang
-COMOUT="$ROTDIR/$CDUMP.$PDY/$cyc"
-[[ ! -d $COMOUT ]] && mkdir -p $COMOUT
-cd $COMOUT || exit 99
-[[ ! -d $INPUT ]] && $NLN $OUTDIR .
+# orig HBO commented out
+#export OUTDIR="$ICSDIR/$CDATE/$CDUMP/$CASE/INPUT" #lzhang
+#COMOUT="$ROTDIR/$CDUMP.$PDY/$cyc"
+#[[ ! -d $COMOUT ]] && mkdir -p $COMOUT
+#cd $COMOUT || exit 99
+#[[ ! -d $INPUT ]] && $NLN $OUTDIR .
 #----------------------------------------------------
 cd $DATA || exit 8
 mkdir -p $DATA/INPUT
