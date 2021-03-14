@@ -186,7 +186,7 @@ cat << EOF > ${DATA}/gocart_aod_fv3_mpi.nl
  RCFile = "geosaod.rc"
 /
 EOF
-        ${DATA}/gocart_aod_fv3_mpi.nl  
+        cat ${DATA}/gocart_aod_fv3_mpi.nl  
 	srun --export=all ./gocart_aod_fv3_mpi_LUTs.x
 	if [ $? -ne 0 ]; then
   	    echo "gocart_aod_fv3_mpi_LUTs failed an exit!!!"

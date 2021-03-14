@@ -1388,43 +1388,44 @@ fi
 #------------------------------------------------------------------
 # make symbolic links to write forecast files directly in memdir
 cd $DATA
-if [ $QUILTING = ".true." -a $OUTPUT_GRID = "gaussian_grid" ]; then
-  fhr=$FHMIN
-  while [ $fhr -le $FHMAX ]; do
-    FH3=$(printf %03i $fhr)
-    FH2=$(printf %02i $fhr)
-    atmi=atmf${FH3}.$affix
-    sfci=sfcf${FH3}.$affix
-    logi=logf${FH3}
-    pgbi=GFSPRS.GrbF${FH2}
-    flxi=GFSFLX.GrbF${FH2}
-    atmo=$memdir/${CDUMP}.t${cyc}z.atmf${FH3}.${affix}.ges
-    sfco=$memdir/${CDUMP}.t${cyc}z.sfcf${FH3}.${affix}.ges
-    logo=$memdir/${CDUMP}.t${cyc}z.logf${FH3}.txt.ges
-    pgbo=$memdir/${CDUMP}.t${cyc}z.master.grb2f${FH3}
-    flxo=$memdir/${CDUMP}.t${cyc}z.sfluxgrbf${FH3}.grib2
-    eval $NLN $atmo $atmi
-    eval $NLN $sfco $sfci
-    eval $NLN $logo $logi
-    if [ $WRITE_DOPOST = ".true." ]; then
-      eval $NLN $pgbo $pgbi
-      eval $NLN $flxo $flxi
-    fi
-    FHINC=$FHOUT
-    if [ $FHMAX_HF -gt 0 -a $FHOUT_HF -gt 0 -a $fhr -lt $FHMAX_HF ]; then
-      FHINC=$FHOUT_HF
-    fi
-    fhr=$((fhr+FHINC))
-  done
-else
-  for n in $(seq 1 $ntiles); do
-    eval $NLN nggps2d.tile${n}.nc       $memdir/nggps2d.tile${n}.nc
-    eval $NLN nggps3d.tile${n}.nc       $memdir/nggps3d.tile${n}.nc
-    eval $NLN grid_spec.tile${n}.nc     $memdir/grid_spec.tile${n}.nc
-    eval $NLN atmos_static.tile${n}.nc  $memdir/atmos_static.tile${n}.nc
-    eval $NLN atmos_4xdaily.tile${n}.nc $memdir/atmos_4xdaily.tile${n}.nc
-  done
-fi
+###HBO commented out for random ensemble failure
+#if [ $QUILTING = ".true." -a $OUTPUT_GRID = "gaussian_grid" ]; then
+#  fhr=$FHMIN
+#  while [ $fhr -le $FHMAX ]; do
+#    FH3=$(printf %03i $fhr)
+#    FH2=$(printf %02i $fhr)
+#    atmi=atmf${FH3}.$affix
+#    sfci=sfcf${FH3}.$affix
+#    logi=logf${FH3}
+#    pgbi=GFSPRS.GrbF${FH2}
+#    flxi=GFSFLX.GrbF${FH2}
+#    atmo=$memdir/${CDUMP}.t${cyc}z.atmf${FH3}.${affix}
+#    sfco=$memdir/${CDUMP}.t${cyc}z.sfcf${FH3}.${affix}
+#    logo=$memdir/${CDUMP}.t${cyc}z.logf${FH3}.txt.ges
+#    pgbo=$memdir/${CDUMP}.t${cyc}z.master.grb2f${FH3}
+#    flxo=$memdir/${CDUMP}.t${cyc}z.sfluxgrbf${FH3}.grib2
+#    eval $NLN ${atmo}.ges ${atmi}
+#    eval $NLN ${sfco}.ges ${sfci}
+#    eval $NLN ${logo} ${logi}
+#    if [ $WRITE_DOPOST = ".true." ]; then
+#      eval $NLN $pgbo $pgbi
+#      eval $NLN $flxo $flxi
+#    fi
+#    FHINC=$FHOUT
+#    if [ $FHMAX_HF -gt 0 -a $FHOUT_HF -gt 0 -a $fhr -lt $FHMAX_HF ]; then
+#      FHINC=$FHOUT_HF
+#    fi
+#    fhr=$((fhr+FHINC))
+#  done
+#else
+#  for n in $(seq 1 $ntiles); do
+#    eval $NLN nggps2d.tile${n}.nc       $memdir/nggps2d.tile${n}.nc
+#    eval $NLN nggps3d.tile${n}.nc       $memdir/nggps3d.tile${n}.nc
+#    eval $NLN grid_spec.tile${n}.nc     $memdir/grid_spec.tile${n}.nc
+#    eval $NLN atmos_static.tile${n}.nc  $memdir/atmos_static.tile${n}.nc
+#    eval $NLN atmos_4xdaily.tile${n}.nc $memdir/atmos_4xdaily.tile${n}.nc
+#  done
+#fi
 
 # Copy namelist file
 $NCP input.nml $memdir
@@ -1442,40 +1443,41 @@ $ERRSCRIPT || exit $err
 #------------------------------------------------------------------
 if [ $SEND = "YES" ]; then
   # Copy model restart files
-  cd $RSTDIR_TMP
-  #mkdir -p $memdir/RESTART
-
-  # Only save restarts at single time in RESTART directory
-  # Either at restart_interval or at end of the forecast
-  if [ $restart_interval -eq 0 -o $restart_interval -eq $FHMAX ]; then
-
-    # Add time-stamp to restart files at FHMAX
-    RDATE=$($NDATE +$FHMAX $CDATE)
-    rPDY=$(echo $RDATE | cut -c1-8)
-    rcyc=$(echo $RDATE | cut -c9-10)
-    for file in $(ls * | grep -v 0000); do
-# -orig      $NMV $file ${rPDY}.${rcyc}0000.$file
-      $NMV ${file} ${rPDY}.${rcyc}0000.${file}.ges
-      #$NCP ${rPDY}.${rcyc}0000.$file $memdir/RESTART/${rPDY}.${rcyc}0000.$file #lzhang
-    done
-    cd $memdir/
-    $NLN RERUN_RESTART  RESTART 
-  #  $NLN $memdir/RESTART  $RSTDIR_TMP
-
-  else
-    mkdir -p ../RESTART
-    # time-stamp exists at restart_interval time, just copy
-    RDATE=$($NDATE +$restart_interval $CDATE)
-    rPDY=$(echo $RDATE | cut -c1-8)
-    rcyc=$(echo $RDATE | cut -c9-10)
-    for file in ${rPDY}.${rcyc}0000.* ; do
-# -orig      $NMV $file $memdir/RESTART/$file
-      $NMV $file $memdir/RESTART/${file}.ges
-    done
-    cd $memdir/
-    rm -rf RERUN_RESTART
-    $NLN RESTART RERUN_RESTART
-  fi
+### HBO- commented out Line 1459-1493 related to RSTDIR_TMP for CDUMP=gfs  
+#  cd $RSTDIR_TMP
+#  #mkdir -p $memdir/RESTART
+#
+#  # Only save restarts at single time in RESTART directory
+#  # Either at restart_interval or at end of the forecast
+#  if [ $restart_interval -eq 0 -o $restart_interval -eq $FHMAX ]; then
+#
+#    # Add time-stamp to restart files at FHMAX
+#    RDATE=$($NDATE +$FHMAX $CDATE)
+#    rPDY=$(echo $RDATE | cut -c1-8)
+#    rcyc=$(echo $RDATE | cut -c9-10)
+#    for file in $(ls * | grep -v 0000); do
+## -orig      $NMV $file ${rPDY}.${rcyc}0000.$file
+#      $NMV ${file} ${rPDY}.${rcyc}0000.${file}.ges
+#      #$NCP ${rPDY}.${rcyc}0000.$file $memdir/RESTART/${rPDY}.${rcyc}0000.$file #lzhang
+#    done
+#    cd $memdir/
+#    $NLN RERUN_RESTART  RESTART 
+#  #  $NLN $memdir/RESTART  $RSTDIR_TMP
+#
+#  else
+#    mkdir -p ../RESTART
+#    # time-stamp exists at restart_interval time, just copy
+#    RDATE=$($NDATE +$restart_interval $CDATE)
+#    rPDY=$(echo $RDATE | cut -c1-8)
+#    rcyc=$(echo $RDATE | cut -c9-10)
+#    for file in ${rPDY}.${rcyc}0000.* ; do
+## -orig      $NMV $file $memdir/RESTART/$file
+#      $NMV $file $memdir/RESTART/${file}.ges
+#    done
+#    cd $memdir/
+#    rm -rf RERUN_RESTART
+#    $NLN RESTART RERUN_RESTART
+#  fi
 
   # Copy gdas and enkf member restart files
   if [ $CDUMP = "gdas" -a $rst_invt1 -gt 0 ]; then
@@ -1508,6 +1510,51 @@ if [ $SEND = "YES" ]; then
     fi
   fi
 fi
+
+#------------------------------------------------------------------
+# make symbolic links to write forecast files directly in memdir
+cd $DATA
+if [ $QUILTING = ".true." -a $OUTPUT_GRID = "gaussian_grid" ]; then
+  fhr=$FHMIN
+  while [ $fhr -le $FHMAX ]; do
+    FH3=$(printf %03i $fhr)
+    FH2=$(printf %02i $fhr)
+    atmi=atmf${FH3}.$affix
+    sfci=sfcf${FH3}.$affix
+    logi=logf${FH3}
+    pgbi=GFSPRS.GrbF${FH2}
+    flxi=GFSFLX.GrbF${FH2}
+    atmo=$memdir/${CDUMP}.t${cyc}z.atmf${FH3}.${affix}
+    sfco=$memdir/${CDUMP}.t${cyc}z.sfcf${FH3}.${affix}
+    logo=$memdir/${CDUMP}.t${cyc}z.logf${FH3}.txt
+    pgbo=$memdir/${CDUMP}.t${cyc}z.master.grb2f${FH3}
+    flxo=$memdir/${CDUMP}.t${cyc}z.sfluxgrbf${FH3}.grib2
+    #eval $NLN ${atmo}.ges ${atmi}
+    #eval $NLN ${sfco}.ges ${sfci}
+    #eval $NLN ${logo} $logi
+    $NMV ${atmi} ${atmo}.ges
+    $NMV ${sfci} ${sfco}.ges
+    $NMV  $logi $logo
+    if [ $WRITE_DOPOST = ".true." ]; then
+      eval $NLN $pgbo $pgbi
+      eval $NLN $flxo $flxi
+    fi
+    FHINC=$FHOUT
+    if [ $FHMAX_HF -gt 0 -a $FHOUT_HF -gt 0 -a $fhr -lt $FHMAX_HF ]; then
+      FHINC=$FHOUT_HF
+    fi
+    fhr=$((fhr+FHINC))
+  done
+else
+  for n in $(seq 1 $ntiles); do
+    eval $NLN nggps2d.tile${n}.nc       $memdir/nggps2d.tile${n}.nc
+    eval $NLN nggps3d.tile${n}.nc       $memdir/nggps3d.tile${n}.nc
+    eval $NLN grid_spec.tile${n}.nc     $memdir/grid_spec.tile${n}.nc
+    eval $NLN atmos_static.tile${n}.nc  $memdir/atmos_static.tile${n}.nc
+    eval $NLN atmos_4xdaily.tile${n}.nc $memdir/atmos_4xdaily.tile${n}.nc
+  done
+fi
+
 
 # Determine if this is a warm start or cold start
 if [ $gesln_clean = "YES" ]; then
