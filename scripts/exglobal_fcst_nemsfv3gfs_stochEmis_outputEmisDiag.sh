@@ -769,10 +769,10 @@ if [ $DO_SPPT = "YES" ]; then
 fi
 if [ $DO_SPPT_EMIS = "YES" ]; then
     do_sppt_emis=".true."
-    pert_scale_anthro=${PERT_SCALE_ANTHRO}
-    pert_scale_dust=${PERT_SCALE_DUST} 
-    pert_scale_plume=${PERT_SCALE_PLUME} 
-    pert_scale_seas=${PERT_SCALE_SEAS}
+    emis_amp_anthro=${EMIS_AMP_ANTHRO}
+    emis_amp_dust=${EMIS_AMP_DUST} 
+    emis_amp_plume=${EMIS_AMP_PLUME} 
+    emis_amp_seas=${EMIS_AMP_SEAS}
 fi
 
 # copy over the tables
@@ -1168,10 +1168,10 @@ deflate_level=${deflate_level:-1}
   do_shum      = ${do_shum:-".false."}
   do_skeb      = ${do_skeb:-".false."}
   do_sppt_emis = ${do_sppt_emis:-".false."}
-  pert_scale_anthro = ${pert_scale_anthro:-"0.0"}
-  pert_scale_dust = ${pert_scale_dust:-"0.0"}
-  pert_scale_plume = ${pert_scale_plume:-"0.0"}
-  pert_scale_seas = ${pert_scale_seas:-"0.0"}
+  emis_amp_anthro = ${emis_amp_anthro:-"0.0"}
+  emis_amp_dust = ${emis_amp_dust:-"0.0"}
+  emis_amp_plume = ${emis_amp_plume:-"0.0"}
+  emis_amp_seas = ${emis_amp_seas:-"0.0"}
   fscav_aero   = "sulf:0.2", "bc1:0.2","bc2:0.2","oc1:0.2","oc2:0.2",
   cplchm_rad_opt= ${cplchm_rad_opt:-"F"}
   aer_bc_opt=1

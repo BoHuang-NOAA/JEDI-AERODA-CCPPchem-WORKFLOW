@@ -153,7 +153,7 @@ if [ ! -d $DATA ]; then
 fi
 
 # Stage the FV3 initial conditions to ROTDIR  
-### HBO commented out this block
+# orig HBO commented out
 #export OUTDIR="$ICSDIR/$CDATE/$CDUMP/$CASE/INPUT" #lzhang
 #COMOUT="$ROTDIR/$CDUMP.$PDY/$cyc"
 #[[ ! -d $COMOUT ]] && mkdir -p $COMOUT
@@ -756,7 +756,6 @@ fi
 DO_SKEB=${DO_SKEB:-"NO"}
 DO_SPPT=${DO_SPPT:-"NO"}
 DO_SHUM=${DO_SHUM:-"NO"}
-DO_SPPT_EMIS=${DO_SPPT_EMIS:-"NO"}
 
 if [ $DO_SKEB = "YES" ]; then
     do_skeb=".true."
@@ -766,13 +765,6 @@ if [ $DO_SHUM = "YES" ]; then
 fi
 if [ $DO_SPPT = "YES" ]; then
     do_sppt=".true."
-fi
-if [ $DO_SPPT_EMIS = "YES" ]; then
-    do_sppt_emis=".true."
-    pert_scale_anthro=${PERT_SCALE_ANTHRO}
-    pert_scale_dust=${PERT_SCALE_DUST} 
-    pert_scale_plume=${PERT_SCALE_PLUME} 
-    pert_scale_seas=${PERT_SCALE_SEAS}
 fi
 
 # copy over the tables
@@ -1167,11 +1159,6 @@ deflate_level=${deflate_level:-1}
   do_sppt      = ${do_sppt:-".false."}
   do_shum      = ${do_shum:-".false."}
   do_skeb      = ${do_skeb:-".false."}
-  do_sppt_emis = ${do_sppt_emis:-".false."}
-  pert_scale_anthro = ${pert_scale_anthro:-"0.0"}
-  pert_scale_dust = ${pert_scale_dust:-"0.0"}
-  pert_scale_plume = ${pert_scale_plume:-"0.0"}
-  pert_scale_seas = ${pert_scale_seas:-"0.0"}
   fscav_aero   = "sulf:0.2", "bc1:0.2","bc2:0.2","oc1:0.2","oc2:0.2",
   cplchm_rad_opt= ${cplchm_rad_opt:-"F"}
   aer_bc_opt=1
@@ -1205,8 +1192,7 @@ deflate_level=${deflate_level:-1}
   vertmix_onoff=1
   wetdep_ls_opt  = 1
   restart_inname    = "$DATA/INPUT/"
-  ! Li-orig restart_outname   = "$RSTDIR_TMP/"
-  restart_outname   = "$DATA/RESTART"
+  restart_outname   = "$RSTDIR_TMP/"
 EOF
 
 # Add namelist for IAU
@@ -1363,7 +1349,7 @@ EOF
 EOF
   fi
 
-  if [ $DO_SPPT = "YES" -o $DO_SPPT_EMIS = "YES"  ]; then
+  if [ $DO_SPPT = "YES" ]; then
     cat >> input.nml << EOF
   sppt = $SPPT
   iseed_sppt = ${ISEED_SPPT:-$ISEED}
@@ -1415,12 +1401,12 @@ cd $DATA
 #    flxi=GFSFLX.GrbF${FH2}
 #    atmo=$memdir/${CDUMP}.t${cyc}z.atmf${FH3}.${affix}
 #    sfco=$memdir/${CDUMP}.t${cyc}z.sfcf${FH3}.${affix}
-#    logo=$memdir/${CDUMP}.t${cyc}z.logf${FH3}.txt
+#    logo=$memdir/${CDUMP}.t${cyc}z.logf${FH3}.txt.ges
 #    pgbo=$memdir/${CDUMP}.t${cyc}z.master.grb2f${FH3}
 #    flxo=$memdir/${CDUMP}.t${cyc}z.sfluxgrbf${FH3}.grib2
-#    #eval $NLN ${atmo}.ges ${atmi}
-#    #eval $NLN ${sfco}.ges ${sfci}
-#    #eval $NLN $logo $logi
+#    eval $NLN ${atmo}.ges ${atmi}
+#    eval $NLN ${sfco}.ges ${sfci}
+#    eval $NLN ${logo} ${logi}
 #    if [ $WRITE_DOPOST = ".true." ]; then
 #      eval $NLN $pgbo $pgbi
 #      eval $NLN $flxo $flxi
@@ -1492,12 +1478,13 @@ if [ $SEND = "YES" ]; then
 #    rm -rf RERUN_RESTART
 #    $NLN RESTART RERUN_RESTART
 #  fi
-#
+
   # Copy gdas and enkf member restart files
   if [ $CDUMP = "gdas" -a $rst_invt1 -gt 0 ]; then
     cd $DATA/RESTART
     mkdir -p $memdir/RESTART
-    for rst_int in $restart_interval ; do
+    restart_interval1="6 12"
+    for rst_int in $restart_interval1 ; do
      if [ $rst_int -ge 0 ]; then
        RDATE=$($NDATE +$rst_int $CDATE)
        rPDY=$(echo $RDATE | cut -c1-8)
@@ -1545,7 +1532,7 @@ if [ $QUILTING = ".true." -a $OUTPUT_GRID = "gaussian_grid" ]; then
     flxo=$memdir/${CDUMP}.t${cyc}z.sfluxgrbf${FH3}.grib2
     #eval $NLN ${atmo}.ges ${atmi}
     #eval $NLN ${sfco}.ges ${sfci}
-    #eval $NLN $logo $logi
+    #eval $NLN ${logo} $logi
     $NMV ${atmi} ${atmo}.ges
     $NMV ${sfci} ${sfco}.ges
     $NMV  $logi $logo
