@@ -91,7 +91,7 @@ cat << EOF > ${DATA}/gocart_aod_fv3_mpi.nl
 /
 EOF
         cat ${DATA}/gocart_aod_fv3_mpi.nl  
-	srun --export=all ./gocart_aod_fv3_mpi_LUTs.x
+	srun --export=all -n 2  ./gocart_aod_fv3_mpi_LUTs.x
 	if [ $? -ne 0 ]; then
   	    echo "gocart_aod_fv3_mpi_LUTs failed an exit!!!"
    	    exit 1
@@ -103,8 +103,8 @@ done # end for isensorID
 ### 
 ###############################################################
 # Postprocessing
-cd $pwd
-[[ $mkdata = "YES" ]] && rm -rf $DATA
+#cd $pwd
+#[[ $mkdata = "YES" ]] && rm -rf $DATA
 
 set +x
 if [ $VERBOSE = "YES" ]; then

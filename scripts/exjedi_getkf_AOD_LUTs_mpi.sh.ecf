@@ -159,7 +159,8 @@ varnames =  "sulf","bc1","bc2","oc1","oc2","dust1","dust2","dust3","dust4","dust
 EOF
 
 ((ncores=nmem+1))
-mpirun -np ${ncores} ${VARSREPLACEEXEC}
+#mpirun -np ${ncores} ${VARSREPLACEEXEC}
+srun --export=all  -n  ${ncores} ${VARSREPLACEEXEC}
 err=$?
 if  [ $err -ne 0 ]; then
     echo "ReplaceVars run failed and exit the program!!!"

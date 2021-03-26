@@ -127,7 +127,8 @@ fnameout = "${anlfile}"
 varnames =  "sulf","bc1","bc2","oc1","oc2","dust1","dust2","dust3","dust4","dust5","seas1","seas2","seas3","seas4","seas5"
 /
 EOF
-mpirun -np 1 ${VARSREPLACEEXEC}
+#mpirun -np 1 ${VARSREPLACEEXEC}
+srun --export=all -n 1 ${VARSREPLACEEXEC}
 err=$?
 if  [ $err -ne 0 ]; then
     echo "ReplaceVars run failed and exit the program!!!"

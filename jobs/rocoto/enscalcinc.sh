@@ -30,6 +30,8 @@ done
 status=$?
 [[ $status -ne 0 ]] && exit $status
 
+ulimit -s unlimited
+
 ### Config ensemble increment calculation 
 export ENSEND=$((NMEM_EFCSGRP * ENSGRP))
 export ENSBEG=$((ENSEND - NMEM_EFCSGRP + 1))

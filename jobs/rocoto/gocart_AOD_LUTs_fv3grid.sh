@@ -75,7 +75,7 @@ mkdir -p $DATA && cd $DATA/
 $NLN $AODEXEC ./gocart_aod_fv3_mpi_LUTs.x
 ${NLN} ${HOMEjedi}/geos-aero/test/testinput/geosaod.rc ./geosaod.rc
 ${NLN} ${HOMEjedi}/geos-aero/test/testinput/Chem_MieRegistry.rc ./Chem_MieRegistry.rc
-${NLN} ${HOMEjedi}/geos-aero/test/Data/*.nc ./
+${NLN} ${HOMEjedi}/geos-aero/test/Data ./
 
 ndate1=${NDATE}
 # hard coding some modules here...

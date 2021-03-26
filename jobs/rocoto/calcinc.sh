@@ -28,7 +28,10 @@ done
 # Source machine runtime environment
 . $BASE_ENV/${machine}.env calcinc
 status=$?
+
 [[ $status -ne 0 ]] && exit $status
+
+ulimit -s unlimited
 ###############################################################
 CALCINCEXEC=${CALCINCEXEC:-$HOMEgfs/exec/calc_increment_ens.x}
 export CALCINCNCEXEC=${CALCINCNCEXEC:-$HOMEgfs/exec/calc_increment_ens_ncio.x}
