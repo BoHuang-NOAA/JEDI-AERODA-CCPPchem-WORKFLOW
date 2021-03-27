@@ -756,7 +756,8 @@ fi
 DO_SKEB=${DO_SKEB:-"NO"}
 DO_SPPT=${DO_SPPT:-"NO"}
 DO_SHUM=${DO_SHUM:-"NO"}
-DO_SPPT_EMIS=${DO_SPPT_EMIS:-"NO"}
+ENS_DO_SPPT_EMIS=${ENS_DO_SPPT_EMIS:-"NO"}
+CNTL_DO_SPPT_EMIS=${CNTL_DO_SPPT_EMIS:-"NO"}
 
 if [ $DO_SKEB = "YES" ]; then
     do_skeb=".true."
@@ -767,13 +768,39 @@ fi
 if [ $DO_SPPT = "YES" ]; then
     do_sppt=".true."
 fi
-if [ $DO_SPPT_EMIS = "YES" ]; then
+
+if [ $CNTL_DO_SPPT_EMIS = "YES" -a $MEMBER -eq -1 ]; then
     do_sppt_emis=".true."
-    pert_scale_anthro=${PERT_SCALE_ANTHRO}
-    pert_scale_dust=${PERT_SCALE_DUST} 
-    pert_scale_plume=${PERT_SCALE_PLUME} 
-    pert_scale_seas=${PERT_SCALE_SEAS}
+    cntl_sppt_emis=${CNTL_SPPT_EMIS}
+    cntl_sppt_emis_tau=${CNTL_SPPT_EMIS_TAU}
+    cntl_sppt_emis_lscale=${CNTL_SPPT_EMIS_LSCALE}
+    cntl_sppt_emis_logit=${CNTL_SPPT_EMIS_LOGIT}
+    cntl_sppt_emis_sfclimit=${CNTL_SPPT_EMIS_SFCLIMIT}
+
+    pert_scale_anthro=${CNTL_PERT_SCALE_ANTHRO}
+    pert_scale_dust=${CNTL_PERT_SCALE_DUST} 
+    pert_scale_plume=${CNTL_PERT_SCALE_PLUME} 
+    pert_scale_seas=${CNTL_PERT_SCALE_SEAS}
+
+    emis_amp_anthro=${CNTL_EMIS_AMP_ANTHRO}
+    emis_amp_dust=${CNTL_EMIS_AMP_DUST} 
+    emis_amp_plume=${CNTL_EMIS_AMP_PLUME} 
+    emis_amp_seas=${CNTL_EMIS_AMP_SEAS}
 fi
+
+if [ $ENS_DO_SPPT_EMIS = "YES" -a $MEMBER -gt 0 ]; then
+    do_sppt_emis=".true."
+    pert_scale_anthro=${ENS_PERT_SCALE_ANTHRO}
+    pert_scale_dust=${ENS_PERT_SCALE_DUST} 
+    pert_scale_plume=${ENS_PERT_SCALE_PLUME} 
+    pert_scale_seas=${ENS_PERT_SCALE_SEAS}
+
+    emis_amp_anthro=${ENS_EMIS_AMP_ANTHRO}
+    emis_amp_dust=${ENS_EMIS_AMP_DUST} 
+    emis_amp_plume=${ENS_EMIS_AMP_PLUME} 
+    emis_amp_seas=${ENS_EMIS_AMP_SEAS}
+fi
+
 
 # copy over the tables
 DIAG_TABLE=${DIAG_TABLE:-$PARM_FV3DIAG/diag_table}
@@ -1168,10 +1195,14 @@ deflate_level=${deflate_level:-1}
   do_shum      = ${do_shum:-".false."}
   do_skeb      = ${do_skeb:-".false."}
   do_sppt_emis = ${do_sppt_emis:-".false."}
-  pert_scale_anthro = ${pert_scale_anthro:-"0.0"}
-  pert_scale_dust = ${pert_scale_dust:-"0.0"}
-  pert_scale_plume = ${pert_scale_plume:-"0.0"}
-  pert_scale_seas = ${pert_scale_seas:-"0.0"}
+  pert_scale_anthro = ${pert_scale_anthro:-"1.0"}
+  pert_scale_dust = ${pert_scale_dust:-"1.0"}
+  pert_scale_plume = ${pert_scale_plume:-"1.0"}
+  pert_scale_seas = ${pert_scale_seas:-"1.0"}
+  emis_amp_anthro = ${emis_amp_anthro:-"0.0"}
+  emis_amp_dust = ${emis_amp_dust:-"0.0"}
+  emis_amp_plume = ${emis_amp_plume:-"0.0"}
+  emis_amp_seas = ${emis_amp_seas:-"0.0"}
   fscav_aero   = "sulf:0.2", "bc1:0.2","bc2:0.2","oc1:0.2","oc2:0.2",
   cplchm_rad_opt= ${cplchm_rad_opt:-"F"}
   aer_bc_opt=1
@@ -1336,7 +1367,7 @@ EOF
 
 # Add namelist for stochastic physics options
 echo "" >> input.nml
-if [ $MEMBER -gt 0 ]; then
+if [ $MEMBER -gt 0 -o $CNTL_DO_SPPT_EMIS = "YES" ]; then
 
     cat >> input.nml << EOF
 &nam_stochy
@@ -1363,8 +1394,16 @@ EOF
 EOF
   fi
 
-  if [ $DO_SPPT = "YES" -o $DO_SPPT_EMIS = "YES"  ]; then
-    cat >> input.nml << EOF
+  if [ $DO_SPPT = "YES" -o $CNTL_DO_SPPT_EMIS = "YES" -o $ENS_DO_SPPT_EMIS = "YES" ]; then
+      if [ $CNTL_DO_SPPT_EMIS = "YES" -a $MEMBER -eq -1 ]; then
+          ISEED_SPPT=$((CDATE*1000 + 0))
+	  SPPT=${cntl_sppt_emis:-"0.5"}
+	  SPPT_TAU=${cntl_sppt_emis_tau:-"-999."}
+	  SPPT_LSCALE=${cntl_sppt_emis_lscale:-"-999."}
+	  SPPT_LOGIT=${cntl_sppt_emis_logit:-".true."}
+	  SPPT_SFCLIMIT=${cntl_sppt_emis_sfclimit:-".true."}
+      fi
+cat >> input.nml << EOF
   sppt = $SPPT
   iseed_sppt = ${ISEED_SPPT:-$ISEED}
   sppt_tau = ${SPPT_TAU:-"-999."}

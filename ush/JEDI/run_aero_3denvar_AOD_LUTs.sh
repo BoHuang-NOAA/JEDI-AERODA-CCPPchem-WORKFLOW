@@ -407,7 +407,7 @@ variational:
   minimizer:
     algorithm: DRIPCG
   iterations:
-  - ninner: 10
+  - ninner: 30
     gradient norm reduction: 1e-10
     test: on
     geometry:

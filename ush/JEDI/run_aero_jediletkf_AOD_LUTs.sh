@@ -236,7 +236,7 @@ yamlblock_obs="- obs space:
     localization:
       localization method: Gaspari-Cohn
       lengthscale: 2500e3
-      max_nobs: 1000"
+      #max_nobs: 1000"
 
 elif [ $AODTYPE = "MODIS" ]; then
 yamlblock_obs="- obs space:
@@ -260,7 +260,7 @@ yamlblock_obs="- obs space:
     localization:
       localization method: Gaspari-Cohn
       lengthscale: 2500e3
-      max_nobs: 1000
+      #max_nobs: 1000
 - obs space:
     name: Aod
     distribution: InefficientDistribution
@@ -282,7 +282,7 @@ yamlblock_obs="- obs space:
     localization:
       localization method: Gaspari-Cohn
       lengthscale: 2500e3
-      max_nobs: 1000"
+      #max_nobs: 1000"
 else
     echo "AODTYBE must be VIIRS or MODIS; exit this program now!"
     exit 1
