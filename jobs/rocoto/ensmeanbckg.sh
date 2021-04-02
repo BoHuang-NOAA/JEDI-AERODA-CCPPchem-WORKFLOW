@@ -126,6 +126,7 @@ while [[ $itile -le 6 ]]; do
     ((nanal=nanal+1))
   done
   srun -n $NMEM_AERO --export=all ./calc_ensmean_fv3.x $NMEM_AERO restart
+  err=$?
   if [[ $? != 0 ]]; then
     exit $?
   fi
