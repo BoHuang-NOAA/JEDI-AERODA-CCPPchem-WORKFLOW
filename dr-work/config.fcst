@@ -16,11 +16,29 @@ if [ $DONST = "YES" ]; then
 fi
 
 #export FORECASTSH="$HOMEgfs/scripts/exglobal_fcst_nemsfv3gfs.sh"
-#export FORECASTSH="$HOMEgfs/scripts/exglobal_fcst_nemsfv3gfs_noGBBEPxFRP.sh"
 export FORECASTSH="$HOMEgfs/scripts/exglobal_fcst_nemsfv3gfs_stochEmis.sh"
 export FCSTEXECDIR="$HOMEgfs/exec"
 export FCSTEXEC="global_fv3gfs_ccpp_stochEmis.x"
+#export FCSTEXEC="global_fv3gfs_ccpp.x"
 export npe_fv3=$npe_fcst 
+
+export CNTL_DO_SPPT_EMIS="YES" # YES or NO
+export CNTL_SPPT_EMIS=0.5           # Below CNTL_SPPT_* parameters copied from MET SPPT in config.efcs
+export CNTL_SPPT_EMIS_TAU=21600.
+export CNTL_SPPT_EMIS_LSCALE=500000.
+export CNTL_SPPT_EMIS_LOGIT=".true."
+export CNTL_SPPT_EMIS_SFCLIMIT=".true."
+export CNTL_PERT_SCALE_ANTHRO=2.0 # SPPT emis scale factor, = 1.0 (by default)
+export CNTL_PERT_SCALE_DUST=2.0   # SPPT emis scale factor, = 1.0 (by default)
+export CNTL_PERT_SCALE_PLUME=2.0  # SPPT emis scale factor, = 1.0 (by default)
+export CNTL_PERT_SCALE_SEAS=2.0   # SPPT emis scale factor, = 1.0 (by default)
+export CNTL_EMIS_AMP_ANTHRO=0.0 #  SPPT emis STD, = 0.0 (by default for one control run)
+export CNTL_EMIS_AMP_DUST=0.0   #  SPPT emis STD, = 0.0 (by default for one control run)
+export CNTL_EMIS_AMP_PLUME=0.0  #  SPPT emis STD, = 0.0 (by default for one control run)
+export CNTL_EMIS_AMP_SEAS=0.0   #  SPPT emis STD, = 0.0 (by default for one control run)
+
+
+
 
 if [[ "$CDUMP" == "gfs" ]] ; then
    export npe_fv3=$npe_fcst_gfs
@@ -226,9 +244,13 @@ if [[ "$OUTPUT_FILE" == "netcdf" ]]; then
         fi
     fi
     if [[ "$machine" == "HERA" ]]; then
-        export OUTPUT_FILETYPES=" 'netcdf_parallel' 'netcdf_parallel' "
+	# Cause intermittient errors for writing MET fields
+        #export OUTPUT_FILETYPES=" 'netcdf_parallel' 'netcdf_parallel' "
+        export OUTPUT_FILETYPES=" 'netcdf' 'netcdf' "
         if [ $RESTILE -le 192 ]; then
-            export OUTPUT_FILETYPES=" 'netcdf_parallel' 'netcdf' "
+	    # Cause intermittient errors for writing MET fields
+            #export OUTPUT_FILETYPES=" 'netcdf_parallel' 'netcdf' "
+            export OUTPUT_FILETYPES=" 'netcdf' 'netcdf' "
         fi
     fi
 fi

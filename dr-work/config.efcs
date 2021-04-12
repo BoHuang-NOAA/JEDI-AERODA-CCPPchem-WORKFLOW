@@ -44,11 +44,17 @@ export SPPT_TAU=21600.
 export SPPT_LSCALE=500000.
 export SPPT_LOGIT=".true."
 export SPPT_SFCLIMIT=".true."
-export DO_SPPT_EMIS="NO"
-export EMIS_AMP_ANTHRO=0.0
-export EMIS_AMP_DUST=0.0
-export EMIS_AMP_PLUME=0.0
-export EMIS_AMP_SEAS=0.0
+#Refer to /scratch2/BMC/gsd-fv3-dev/MAPP_2018/bhuang/JEDI-2020/JEDI-FV3/expRuns/NODA_C96_C96_M20_CCPP2_noStochEmis_201605/diagnostics/innovStat/ma/sk-spread/runs_2016050900_2016052300/plots/meanStats-ns-10-ne-15.txt
+export ENS_DO_SPPT_EMIS="YES" # YES or NO
+export ENS_PERT_SCALE_ANTHRO=2.0 # SPPT emis scale factor, = 1.0 (by default)
+export ENS_PERT_SCALE_DUST=2.0   # SPPT emis scale factor, = 1.0 (by default)
+export ENS_PERT_SCALE_PLUME=2.0  # SPPT emis scale factor, = 1.0 (by default)
+export ENS_PERT_SCALE_SEAS=2.0   # SPPT emis scale factor, = 1.0 (by default)
+export ENS_EMIS_AMP_ANTHRO=2.0 #  SPPT emis STD, = 0.0 (by default, maximum of 2.0 by design)
+export ENS_EMIS_AMP_DUST=2.0   #  SPPT emis STD, = 0.0 (by default, maximum of 2.0 by design)
+export ENS_EMIS_AMP_PLUME=2.0  #  SPPT emis STD, = 0.0 (by default, maximum of 2.0 by design)
+export ENS_EMIS_AMP_SEAS=2.0   #  SPPT emis STD, = 0.0 (by default, maximum of 2.0 by design)
+
 
 if [ $QUILTING = ".true." -a $OUTPUT_GRID = "gaussian_grid" ]; then
     if [[ "$CCPP_SUITE" == "FV3_GSD_v0" || "$CCPP_SUITE" == "FV3_GSD_noah" ]] ; then
@@ -89,9 +95,13 @@ if [[ "$OUTPUT_FILE" == "netcdf" ]]; then
         fi
     fi
     if [[ "$machine" == "HERA" ]]; then
-        export OUTPUT_FILETYPES=" 'netcdf_parallel' 'netcdf_parallel' "
+	# Cause intermittit netcdf writing errors
+        #export OUTPUT_FILETYPES=" 'netcdf_parallel' 'netcdf_parallel' "
+        export OUTPUT_FILETYPES=" 'netcdf' 'netcdf' "
         if [ $RESTILE -le 192 ]; then
-            export OUTPUT_FILETYPES=" 'netcdf_parallel' 'netcdf' "
+	    # Cause intermittit netcdf writing errors
+            #export OUTPUT_FILETYPES=" 'netcdf_parallel' 'netcdf' "
+            export OUTPUT_FILETYPES=" 'netcdf' 'netcdf' "
         fi
     fi
 fi
