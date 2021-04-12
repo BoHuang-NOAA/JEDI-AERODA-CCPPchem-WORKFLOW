@@ -255,5 +255,4 @@ if [ $err -eq 0 ]; then
     fi
 fi
 
-err=$?
 exit $err

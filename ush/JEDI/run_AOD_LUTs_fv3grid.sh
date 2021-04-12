@@ -92,7 +92,8 @@ cat << EOF > ${DATA}/gocart_aod_fv3_mpi.nl
 EOF
         cat ${DATA}/gocart_aod_fv3_mpi.nl  
 	srun --export=all -n 2  ./gocart_aod_fv3_mpi_LUTs.x
-	if [ $? -ne 0 ]; then
+	err=$?
+	if [ $err -ne 0 ]; then
   	    echo "gocart_aod_fv3_mpi_LUTs failed an exit!!!"
    	    exit 1
 	else
